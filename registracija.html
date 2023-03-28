@@ -1,0 +1,731 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <title>
+        Registracija
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- fontovi -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700" rel="stylesheet" type="text/css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/registracija.css">
+
+    <!-- js -->
+    <script src="js/registracija.js"></script>
+    <script src="js/JsBarcode.all.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<!-- <style>
+    .hide {
+        display: none;
+    }
+    
+    input {
+        display: block;
+    }
+    
+    .wrapper {
+        margin-bottom: 20px;
+    }
+</style> -->
+
+<body style="background-color:#ffffff;">
+
+
+    <h1>REGISTRACIJA</h1>
+
+    <div class="wrapper ime">
+        <!-- <label for="ime">Ime:</label> -->
+        <input type="text" id="ime" name="ime" placeholder="Ime">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Obavezno polje!</div>
+    </div>
+
+    <div class="wrapper prezime">
+        <!-- <label for="prezime">Prezime:</label> -->
+        <input type="text" id="prezime" name="prezime" placeholder="Prezime">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Obavezno polje!</div>
+    </div>
+
+    <div class="wrapper email">
+        <!-- <label for="email">Mejl:</label> -->
+        <input type="email" id="email" name="email" placeholder="Email">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite validan mejl!</div>
+        <div id="zauzet-mejl" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Korisnik sa ovim mejlom već postoji!</div>
+    </div>
+
+    <div class="wrapper lozinka">
+        <!-- <label for="password">Lozinka:</label> -->
+        <input type="password" id="password" name="password" placeholder="Lozinka">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Lozinka mora sadrzati kombinaciju slova i brojeva, i mora biti duza od 5 karaktera!</div>
+    </div>
+
+    <div class="wrapper potvrda-lozinke">
+        <!-- <label for="confirm-password">Potvrdite lozinku:</label> -->
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Potvrdite lozinku">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Lozinke moraju biti iste!</div>
+    </div>
+    <div class="wrapper rodjendan">
+        <select id="rodjendan_dan">
+            <option value="">Day</option>
+            <script>
+              for (let day = 1; day <= 31; day++) {
+                document.write(`<option value="${day}">${day}</option>`);
+              }
+            </script>
+          </select>
+
+        <select id="rodjendan_mesec">
+            <option value="">Month</option>
+            <script>
+              const months = [
+                'Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul',
+                'Avgust', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'
+              ];
+              for (let month = 0; month < months.length; month++) {
+                let month_number = month + 1;
+                document.write(`<option value="${month_number}">${months[month]}</option>`);
+              }
+            </script>
+          </select>
+
+        <select id="rodjendan_godina">
+            <option value="">Year</option>
+            <script>
+              const current_year = new Date().getFullYear();
+              for (let year = current_year - 100; year <= current_year; year++) {
+                document.write(`<option value="${year}">${year}</option>`);
+              }
+            </script>
+          </select>
+        <div class="hide error-poruka" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite datum rodjenja!</div>
+    </div>
+    <div class="wrapper pol">
+        <p>Pol:</p>
+        <label>
+            <input type="radio" name="gender" value="muski"> Muški
+          </label>
+
+        <label>
+            <input type="radio" name="gender" value="zenski"> Ženski
+          </label>
+
+        <label>
+            <input type="radio" name="gender" value="drugo"> Drugo
+          </label>
+
+        <script>
+            // Event listeners to handle user selection of radio buttons
+            const genderRadios = document.getElementsByName("gender");
+            for (let i = 0; i < genderRadios.length; i++) {
+                genderRadios[i].addEventListener("change", function() {
+                    console.log(`Selected gender: ${this.value}`);
+                });
+            }
+        </script>
+        <div class="hide error-poruka" style="font-size: 14px;font-weight: 400;color: #ba0505;">Odaberite pol!</div>
+    </div>
+    <div class="wrapper saglasnosti">
+        <label>
+            <input type="checkbox" name="uslovi" value="uslovi"> Prihvatam Uslove loyalty programa
+        </label>
+        <div class="hide error-poruka" style="font-size: 14px;font-weight: 400;color: #ba0505;">Obavezno polje!</div>
+        <label>
+            <input type="checkbox" name="promo" value="promo"> Želim da primam promotivne ponude
+        </label>
+        <label>
+            <input type="checkbox" name="personalizovana_ponuda" value="personalizovana_ponuda"> Želim da primam personalizovane ponude
+        </label>
+    </div>
+    <br>
+    <button id="dugme">REGISTRUJ SE</button>
+    <br>
+    <p>Imaš nalog?</p>
+    <a href="login.html">Uloguj se</a>
+
+    <script type="text/javascript">
+        function upisiBarcode(ID) {
+
+
+            var user_id = '' + ID
+            console.log('USER ID: ' + user_id)
+            var barcode = ''
+
+            switch (user_id.length) {
+                case 1:
+                    barcode = '000000000' + user_id
+                    break;
+
+                case 2:
+                    barcode = '00000000' + user_id
+                    break;
+
+                case 3:
+                    barcode = '0000000' + user_id
+                    break;
+
+                case 4:
+                    barcode = '000000' + user_id
+                    break;
+
+                case 5:
+                    barcode = '00000' + user_id
+                    break;
+
+                case 6:
+                    barcode = '0000' + user_id
+                    break;
+
+                case 7:
+                    barcode = '000' + user_id
+                    break;
+
+                case 8:
+                    barcode = '00' + user_id
+                    break;
+
+                case 9:
+                    barcode = '0' + user_id
+                    break;
+
+                case 10:
+                    barcode = user_id
+                    break;
+            }
+
+
+
+            var myHeaders = new Headers();
+
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Authorization", "Basic dGVzdHVzZXI6ZGFkYXN1cHJlbWU=");
+
+            var urlencoded = new URLSearchParams();
+
+            urlencoded.append('loyalty_user_barcode', barcode)
+
+            var requestOptions = {
+                method: 'PATCH',
+                headers: myHeaders,
+                body: urlencoded,
+                redirect: 'follow'
+            };
+
+            var query = "https://development.sales-snap.com/api/contacts/" + user_id + "/edit"
+
+            fetch(query, requestOptions)
+                .then(response => response.text())
+                //   .then(text => console.log(text))
+                .then(result => console.log(result))
+                .then(() => {
+
+
+                    alert('USPESNA REGISTRACIJA!')
+
+                    // $('body').append('<svg id="barcode"></svg>')
+                    // JsBarcode("#barcode", barcode);
+                })
+                .catch(error => console.log('error', error));
+        }
+
+
+
+
+        async function upisiNovogKorisnika(email, password, name, surname) {
+
+            var email_korisnika = email
+            var contact_ip = ''
+            var password_korisnika = password
+            var user_name = name
+            var user_surname = surname
+
+
+            var myHeaders = new Headers();
+
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Authorization", "Basic dGVzdHVzZXI6ZGFkYXN1cHJlbWU=");
+
+            var urlencoded = new URLSearchParams();
+
+            // IP FETCHER
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+
+                    contact_ip = data.ip
+
+                    urlencoded.append('email', email_korisnika)
+                    urlencoded.append('loyalty_user_password', password_korisnika)
+                    urlencoded.append("ipAddress", contact_ip);
+                    urlencoded.append('firstname', user_name)
+                    urlencoded.append('lastname', user_surname)
+
+
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: urlencoded,
+                        redirect: 'follow'
+                    };
+
+                    var query = "https://development.sales-snap.com/api/contacts/new"
+
+                    fetch(query, requestOptions)
+                        .then(response => response.text())
+                        .then(result => console.log(result))
+                        .then(() => {
+
+
+                            console.log(email_korisnika)
+                            console.log(password_korisnika)
+
+                            var contact_id = ''
+
+
+                            var myHeaders = new Headers();
+                            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+                            myHeaders.append("Authorization", "Basic dGVzdHVzZXI6ZGFkYXN1cHJlbWU=");
+
+                            var urlencoded = new URLSearchParams();
+
+                            var requestOptions = {
+                                method: 'GET',
+                                headers: myHeaders,
+                                //   mode: 'no-cors',
+                                // body: urlencoded,
+                                redirect: 'follow'
+                            };
+
+
+
+                            fetch("https://development.sales-snap.com/api/contacts?search=!is:anonymous&limit=0", requestOptions)
+                                .then(response => response.text())
+                                .then(result => {
+                                    var json_objekat = result
+                                    var objekat = JSON.parse(result);
+                                    var kontakti = objekat.contacts
+                                    console.log(Object.keys(kontakti).length)
+
+                                    const keys = Object.keys(kontakti);
+                                    console.log(keys)
+
+                                    var counter = 0;
+
+                                    keys.forEach((key, index) => {
+
+                                        var BreakException = {};
+
+
+                                        try {
+
+                                            if (kontakti[key].fields.core.email.value == email_korisnika) {
+
+                                                console.log('NASAO KORISNIKA')
+                                                    //   console.log(kontakti[key].id)
+                                                counter++
+                                                throw BreakException;
+
+                                            }
+
+
+
+
+                                        } catch (e) {
+                                            if (e !== BreakException) throw e;
+
+                                            else if (e == BreakException) {
+
+                                                //   console.log(kontakti[key].id)
+
+                                                upisiBarcode(kontakti[key].id)
+
+                                            }
+                                        }
+
+
+
+                                    });
+
+
+                                    if (counter == 0) {
+                                        console.log('NEMA KORISNIKA!')
+
+                                        // upisiNovogKorisnika(mejl_preporucenog, mejl_preporucitelja)
+                                    }
+
+
+
+
+
+                                })
+                                .catch(error => console.log('error', error));
+
+
+                        })
+                        .catch(error => console.log('error', error));
+
+                });
+
+
+        }
+
+
+
+
+
+        function barcodeGenerator(ID) {
+            var user_id = '' + ID
+            var barcode = ''
+
+            switch (user_id.length) {
+                case 1:
+                    barcode = '000000000' + user_id
+                    break;
+
+                case 2:
+                    barcode = '00000000' + user_id
+                    break;
+
+                case 3:
+                    barcode = '0000000' + user_id
+                    break;
+
+                case 4:
+                    barcode = '000000' + user_id
+                    break;
+
+                case 5:
+                    barcode = '00000' + user_id
+                    break;
+
+                case 6:
+                    barcode = '0000' + user_id
+                    break;
+
+                case 7:
+                    barcode = '000' + user_id
+                    break;
+
+                case 8:
+                    barcode = '00' + user_id
+                    break;
+
+                case 9:
+                    barcode = '0' + user_id
+                    break;
+
+                case 10:
+                    barcode = user_id
+                    break;
+            }
+
+            // $('body').append('<svg id="barcode"></svg>')
+            // JsBarcode("#barcode", barcode);
+
+            return barcode
+        }
+
+        // function ipGenerator() {
+        //     let ip;
+        //     fetch('https://api.ipify.org?format=json')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         ip = data.ip
+        //         // console.log(`Your IP address is: ${data.ip}`);
+
+        //     })
+
+
+        // }
+
+
+        function proveriMejl(mejl, password) {
+            var user_email = mejl
+            var user_password = password
+
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Authorization", "Basic dGVzdHVzZXI6ZGFkYXN1cHJlbWU=");
+
+            var urlencoded = new URLSearchParams();
+
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                //   mode: 'no-cors',
+                // body: urlencoded,
+                redirect: 'follow'
+            };
+
+
+            fetch("https://development.sales-snap.com/api/contacts?search=!is:anonymous&limit=0", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    var json_objekat = result
+                    var objekat = JSON.parse(result);
+                    var kontakti = objekat.contacts
+                    console.log(Object.keys(kontakti).length)
+
+                    const keys = Object.keys(kontakti);
+                    console.log(keys)
+
+                    var counter = 0;
+
+                    keys.forEach((key, index) => {
+
+                        var BreakException = {};
+
+
+                        try {
+
+                            if (kontakti[key].fields.core.email.value == user_email) {
+
+                                console.log('POSTOJI MEJL')
+                                $('#zauzet-mejl').removeClass('hide')
+                                console.log(kontakti[key].id)
+
+                                // BARCODE GENERATOR
+                                // barcodeGenerator(kontakti[key].id)
+
+
+
+                                counter++
+                                throw BreakException;
+
+                            }
+
+
+
+
+                        } catch (e) {
+                            if (e !== BreakException) throw e;
+
+                            else if (e == BreakException) {
+
+                                console.log(kontakti[key].id)
+
+
+                                // upisiPreporuku(kontakti[key].id, mejl_preporucitelja)
+
+                            }
+                        }
+
+
+
+                    });
+
+
+                    if (counter == 0) {
+                        console.log('NEMA KORISNIKA!')
+                        $('#zauzet-mejl').addClass('hide')
+                        upisiNovogKorisnika(user_email, user_password, $('#ime').val(), $('#prezime').val())
+
+
+
+
+
+                    }
+
+
+
+
+
+                })
+                .catch(error => console.log('error', error));
+
+        }
+
+        // function checkEmail(id) {
+        //     var user_email = id;
+
+        //     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        //     if (!$(user_email).val().match(emailPattern)) {
+        //         $(user_email).next().removeClass('hide');
+        //     } else {
+        //         $(user_email).next().addClass('hide')
+        //         return true
+        //     }
+        // }
+
+        // function checkName(id) {
+        //     var user_name = id;
+        //     if (!$(user_name).val().length > 0) {
+        //         $(user_name).next().removeClass('hide');
+        //     } else {
+        //         $(user_name).next().addClass('hide')
+        //         return true
+        //     }
+        // }
+
+        // function checkSurname(id) {
+        //     var user_lastname = id;
+        //     if (!$(user_lastname).val().length > 0) {
+        //         $(user_lastname).next().removeClass('hide');
+        //     } else {
+        //         $(user_lastname).next().addClass('hide')
+        //         return true
+        //     }
+        // }
+
+        // function checkPassword() {
+
+        //     if (($('#password').val().match(/[a-z]/) || $('#password').val().match(/[A-Z]/)) && $('#password').val().match(/([0-9])/) && $('#password').val().length > 5) {
+        //         $('#password').next().addClass('hide');
+
+        //         if ($('#password').val() !== $('#confirm-password').val()) {
+        //             $('#confirm-password').next().removeClass('hide');
+        //         } else {
+        //             $('#confirm-password').next().addClass('hide')
+        //             return true
+        //         }
+
+        //     } else {
+        //         $('#password').next().removeClass('hide');
+        //     }
+        // }
+
+        // function checkBirthday() {
+        //     var counter = 0
+        //     var selektovi = document.querySelectorAll('.rodjendan select')
+        //     selektovi.forEach(selekt => {
+        //         if (selekt.value == '') counter++
+
+        //     })
+        //     console.log(counter)
+        //     if (counter == 0) {
+        //         $('.rodjendan .error-poruka').addClass('hide');
+        //         return true
+        //     } else {
+        //         $('.rodjendan .error-poruka').removeClass('hide');
+        //     }
+
+        // }
+
+
+        document.getElementById('dugme').addEventListener('click', function() {
+
+            // VALIDACIJA
+            checkName('#ime')
+            checkSurname('#prezime')
+            checkEmail('#email')
+            checkPassword()
+            checkBirthday()
+            checkGender()
+            checkTerms()
+
+            if (
+                checkName('#ime') == true &&
+                checkSurname('#prezime') == true &&
+                checkEmail('#email') == true &&
+                checkPassword() == true &&
+                checkBirthday() == true &&
+                checkGender() == true &&
+                checkTerms() == true
+
+            ) {
+                console.log('PROSLA VALIDACIJA')
+
+                // proveriMejl($('#email').val(), $('#password').val())
+
+            } else {
+                console.log('neuspesna validacija')
+            }
+
+
+
+            // var myHeaders = new Headers();
+            // myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            // myHeaders.append("Authorization", "Basic dGVzdHVzZXI6ZGFkYXN1cHJlbWU=");
+
+            // var urlencoded = new URLSearchParams();
+
+            // var requestOptions = {
+            //   method: 'GET',
+            //   headers: myHeaders,
+            // //   mode: 'no-cors',
+            //   // body: urlencoded,
+            //   redirect: 'follow'
+            // };
+
+            // let mejl_preporucenog = document.querySelector('#preporuceni').value
+            // let mejl_preporucitelja = document.querySelector('#preporucilac').value
+
+            // fetch("https://development.sales-snap.com/api/contacts?search=!is:anonymous&limit=0", requestOptions)
+            //   .then(response => response.text())
+            //   .then(result => {
+            //       var json_objekat = result
+            // 				  	var objekat = JSON.parse(result);
+            // 				  	var kontakti = objekat.contacts
+            // 				  	console.log(Object.keys(kontakti).length)
+
+            // 				  	const keys = Object.keys(kontakti);
+            // 				  	console.log(keys)
+
+            // 				  	var counter = 0;
+
+            // 				  	keys.forEach((key, index) => {
+
+            // 				  	    var BreakException = {};
+
+
+            // 				  	    try {
+
+            //     				  	    if(kontakti[key].fields.core.email.value == mejl_preporucenog) {
+
+            //     				  	        console.log('NASAO')
+            //     				  	     //   console.log(kontakti[key].id)
+            //     				  	        counter++
+            //     				  	        throw BreakException;
+
+            //     				  	    } 
+
+
+
+
+            // 				  	    }
+
+            // 				  	    catch (e) {
+            // 				  	        if (e !== BreakException) throw e;
+
+            // 				  	        else if(e == BreakException) {
+
+            // 				  	         //   console.log(kontakti[key].id)
+
+            // 				  	                upisiPreporuku(kontakti[key].id, mejl_preporucitelja)
+
+            // 				  	        }
+            // 				  	    }
+
+
+
+            //                     });
+
+
+            // 				  	if(counter == 0) {
+            //     				    console.log('NEMA KORISNIKA!')
+
+            //     				    upisiNovogKorisnika(mejl_preporucenog, mejl_preporucitelja)
+            //     				}
+
+
+
+
+
+            //   })
+            //   .catch(error => console.log('error', error));
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>

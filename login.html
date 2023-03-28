@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="JsBarcode.all.min.js"></script>
+</head>
+<style>
+    .wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .hide {
+        display: none;
+    }
+</style>
+<body>
+
+    
+
+    <div id="login-page">
+        <h1>Login</h1>
+        <div class="wrapper">
+            <label for="email">Mejl:</label>
+            <input type="email" id="email" name="email">
+            <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite validan mejl!</div>
+            <div id="zauzet-mejl" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Korisnik sa ovim mejlom ne postoji!</div>
+          </div>
+          
+          <div class="wrapper">
+            <label for="password">Lozinka:</label>
+            <input type="password" id="password" name="password">
+            <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Pogresna lozinka!</div>
+          </div>
+          <div class="wrapper">
+            <a href="zaboravljena_lozinka.html">Zaboravljena lozinka</a>
+          </div>
+          <br>
+        <button id="dugme">LOGIN</button>            
+    </div>
+
+    <div id="account-page" class="hide">
+        <h1>Account login-page</h1>
+        <div class="wrapper">
+            <span>Ime: </span>
+            <span id="ime"></span>
+        </div>
+        <div class="wrapper">
+            <span>Prezime: </span>
+            <span id="prezime"></span>
+        </div>
+        <div class="wrapper">
+            <span>Email: </span>
+            <span id="account-email"></span>
+        </div> 
+        <div class="wrapper">
+            <div>Barkod: </div>
+            <span id="barkod"></span>
+        </div>                
+    </div>
+    
+
+    <script>
+
+        function showUser(ID, email) {
+            var user_id = '' + ID
+            var user_email = email
+            console.log(user_email)
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Authorization", "Basic dGVzdHVzZXI6ZGFkYXN1cHJlbWU=");
+
+            var urlencoded = new URLSearchParams();
+            
+            var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            //   mode: 'no-cors',
+            // body: urlencoded,
+            redirect: 'follow'
+            };
+
+            var query = "https://development.sales-snap.com/api/contacts/" + user_id
+
+
+            fetch(query, requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                var json_objekat = result
+                var objekat = JSON.parse(result);
+                console.log(objekat)
+
+
+                $('#ime').text(objekat.contact.fields.core.firstname.value) 
+                $('#prezime').text(objekat.contact.fields.core.lastname.value) 
+                $('#account-email').text(user_email)
+                
+                
+                console.log('USER ID: ' + user_id)
+                var barcode = ''
+
+                switch(user_id.length) {
+                    case 1:
+                        barcode = '000000000' + user_id
+                        break;
+                    
+                    case 2:
+                        barcode = '00000000' + user_id
+                        break;
+                    
+                    case 3:
+                        barcode = '0000000' + user_id
+                        break;
+                        
+                    case 4:
+                        barcode = '000000' + user_id
+                        break; 
+                        
+                    case 5:
+                        barcode = '00000' + user_id
+                        break; 
+
+                    case 6:
+                        barcode = '0000' + user_id
+                        break; 
+
+                    case 7:
+                        barcode = '000' + user_id
+                        break; 
+
+                    case 8:
+                        barcode = '00' + user_id
+                        break; 
+
+                    case 9:
+                        barcode = '0' + user_id
+                        break; 
+
+                    case 10:
+                        barcode = user_id
+                        break; 
+                }      
+                
+                $('#barkod').append('<svg id="barcode"></svg>')
+                JsBarcode("#barcode", barcode);
+                                
+                                
+            })
+            .catch(error => console.log('error', error));
+
+        }
+
+        function checkEmail(email) {
+            var user_email = email;
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!$(user_email).val().match(emailPattern)) {
+                $(user_email).next().removeClass('hide');
+            } else {
+                $(user_email).next().addClass('hide')
+                return true
+            }
+        }
+
+        function checkUserPassword(ID, password, email) {
+            var user_id = ID
+            var user_password = password
+            var user_email = email
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Authorization", "Basic dGVzdHVzZXI6ZGFkYXN1cHJlbWU=");
+
+            var urlencoded = new URLSearchParams();
+            
+            var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            //   mode: 'no-cors',
+            // body: urlencoded,
+            redirect: 'follow'
+            };
+
+            var query = "https://development.sales-snap.com/api/contacts/" + user_id
+
+
+            fetch(query, requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                var json_objekat = result
+                var objekat = JSON.parse(result);
+                console.log(objekat.contact.fields.personal.loyalty_user_password.value)
+
+                if(user_password == objekat.contact.fields.personal.loyalty_user_password.value) {
+                    console.log('USPESAN LOGIN')
+                    $('#password').next().addClass('hide')
+                    $('#login-page').addClass('hide')
+                    $('#account-page').removeClass('hide')
+
+                    showUser(user_id, user_email)
+
+                } else {
+                    console.log('POGRESAN PASSWORD')
+                    $('#password').next().removeClass('hide')
+                }
+                                
+                                
+                                
+                                
+                                
+            })
+            .catch(error => console.log('error', error));
+
+
+        }
+
+        // function checkPassword() {
+       
+        //     if(($('#password').val().match(/[a-z]/) || $('#password').val().match(/[A-Z]/)) && $('#password').val().match(/([0-9])/) && $('#password').val().length > 5) {
+        //         $('#password').next().addClass('hide');
+
+        //         if($('#password').val() !== $('#confirm-password').val()) {
+        //             $('#confirm-password').next().removeClass('hide');
+        //         } else {
+        //             $('#confirm-password').next().addClass('hide')
+        //             return true
+        //         }
+
+        //     } else {
+        //         $('#password').next().removeClass('hide');
+        //     }
+       
+        // }
+
+        function checkUserEmail(email) {
+            var user_email = email
+
+            console.log(user_email)
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            myHeaders.append("Authorization", "Basic dGVzdHVzZXI6ZGFkYXN1cHJlbWU=");
+
+            var urlencoded = new URLSearchParams();
+            
+            var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            //   mode: 'no-cors',
+            // body: urlencoded,
+            redirect: 'follow'
+            };
+        
+        
+            fetch("https://development.sales-snap.com/api/contacts?search=!is:anonymous&limit=0", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                var json_objekat = result
+                                var objekat = JSON.parse(result);
+                                var kontakti = objekat.contacts
+                                console.log(Object.keys(kontakti).length)
+                                
+                                const keys = Object.keys(kontakti);
+                                console.log(keys)
+                                
+                                var counter = 0;
+                                
+                                keys.forEach((key, index) => {
+                                    
+                                    var BreakException = {};
+                                    
+                                    
+                                    try {
+                                    
+                                        if(kontakti[key].fields.core.email.value == user_email) {
+                                            
+                                            console.log('POSTOJI MEJL')
+                                            $('#zauzet-mejl').addClass('hide')
+
+                                            // BARCODE GENERATOR
+                                            // barcodeGenerator(kontakti[key].id)
+
+
+
+                                            counter++
+                                            throw BreakException;
+                                            
+                                        } 
+                                        
+                                        
+                                        
+                                    
+                                    }
+                                    
+                                    catch (e) {
+                                        if (e !== BreakException) throw e;
+                                        
+                                        else if(e == BreakException) {
+                                        
+                                            console.log(kontakti[key].id)
+
+                                            checkUserPassword(kontakti[key].id, $('#password').val(), user_email)
+                                            
+                                                // upisiPreporuku(kontakti[key].id, mejl_preporucitelja)
+                                            
+                                        }
+                                    }
+                                    
+        
+        
+                                });
+                                
+                                
+                                if(counter == 0) {
+                                    console.log('NEMA KORISNIKA!')
+                                    $('#zauzet-mejl').removeClass('hide')
+                                    // upisiNovogKorisnika(user_email,user_password)
+
+
+
+
+
+                                }
+                                
+                                
+                                
+                                
+                                
+            })
+            .catch(error => console.log('error', error));
+            }
+
+
+
+        document.getElementById('dugme').addEventListener('click', function() {
+            checkEmail('#email')
+            // checkPassword()
+
+
+            if(checkEmail('#email')) {
+                console.log('PROSLA VALIDACIJA')
+
+                checkUserEmail($('#email').val())
+
+            } else {
+                console.log('neuspesna validacija')
+            }
+        })
+    </script>
+</body>
+</html>
