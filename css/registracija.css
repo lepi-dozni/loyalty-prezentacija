@@ -1,0 +1,21 @@
+.hide {
+    display: none;
+}
+
+input {
+    display: block;
+}
+
+.wrapper {
+    margin-bottom: 20px;
+}
+
+.wrapper.pol,
+.wrapper.saglasnosti label {
+    display: flex;
+}
+
+.wrapper.pol label {
+    display: flex;
+    align-items: center;
+}
