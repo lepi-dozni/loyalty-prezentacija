@@ -156,7 +156,7 @@ a{
     -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
     box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
 }
-.backdrop{
+.backdrop:not(.hidden){
     height: 100vh;
     width: 100%;
     position: absolute;
@@ -167,6 +167,9 @@ a{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+.backdrop.hidden{
+    display: none;
 }
 .backdrop .loader{
     width: 150px;

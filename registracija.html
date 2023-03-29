@@ -37,9 +37,11 @@
 </style> -->
 
 <body style="background-color:#ffffff;">
-    <div class="backdrop">
+    <div class="backdrop hidden">
         <img src="https://usagif.com/wp-content/uploads/loading-1.gif" class="loader"/>
     </div>
+    <!-- uspesna registracija -->
+    <!-- link idi na login stranu prazan href -->
     <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
 
     <h1>REGISTRACIJA</h1>
@@ -178,8 +180,10 @@
                 console.log('PROSLA VALIDACIJA')
 
                 try{
+                    $('.backdrop').removeClass('hidden')
                     proveriMejl($('#email').val(), $('#password').val())
                 } catch (error) {
+                    $('.backdrop').addClass('hidden')
                     alert('UPS, doslo je do greske!')
                 }
                 
