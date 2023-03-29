@@ -1,5 +1,4 @@
 // VALIDACIJA - ako je unos dobar, vraca boolean true
-
 // Email
 function checkEmail(id) {
     var user_email = id;
