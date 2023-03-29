@@ -1,3 +1,53 @@
+/* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* css reset */
 .hide {
     display: none;
 }
@@ -5,17 +55,120 @@
 input {
     display: block;
 }
-
-.wrapper {
-    margin-bottom: 20px;
+body{
+    font-family: 'Open Sans';
+    margin: 0;
 }
-
-.wrapper.pol,
-.wrapper.saglasnosti label {
+.wrapper:not(.saglasnosti){
+    margin-bottom: 40px !important;
+    width: 80%;
+    margin: auto;
+}
+.wrapper.saglasnosti{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+.wrapper.saglasnosti input{
+    position: absolute;
+    left: 0;
+}
+.wrapper.saglasnosti label{
+    padding-left: 25px;
+    margin-bottom: 40px;
+}
+.wrapper.saglasnosti .bolded,
+a{
+    color: #1d723b;
+    font-weight: bold;
+}
+.wrapper:not(.saglasnosti) input{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: auto;
+    border-bottom: 2px solid #000;
+}
+.wrapper.rodjendan,
+.wrapper.pol{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.wrapper.pol input{
+    margin-right: 10px;
+}
+.wrapper.rodjendan select{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #000;
+}
+.wrapper.pol{
     display: flex;
 }
 
 .wrapper.pol label {
     display: flex;
     align-items: center;
+}
+.main.logo{
+    height: 65px;
+    width: 65px;
+    display: block;
+    margin: auto;
+    /* margin-top: 20px; */
+}
+h1{
+    font-size: 20px;
+    text-align: center;
+    text-transform: lowercase;
+}
+h1::first-letter{
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+p,
+a{
+    text-align: center;
+    display: block;
+}
+a{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+#dugme{
+    margin: auto;
+    display: block;
+    padding: 10px 9px 10px 9px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    background-color: #286488;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+}
+.backdrop{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: #093141;
+    /* #093141 */
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.backdrop .loader{
+    width: 150px;
+    height: auto;
 }
