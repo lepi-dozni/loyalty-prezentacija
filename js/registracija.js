@@ -369,8 +369,8 @@ async function upisiBarcode(ID) {
         .then(() => {
 
             alert('USPESNA REGISTRACIJA!')
-            var lokacija = window.location.href.replace('registracija', 'login')
-            window.location.href = lokacija
+            // var lokacija = window.location.href.replace('registracija', 'login')
+            // window.location.href = lokacija
 
             // $('body').append('<svg id="barcode"></svg>')
             // JsBarcode("#barcode", barcode);
