@@ -55,14 +55,26 @@ table {
 input {
     display: block;
 }
+html{
+    font-family: 'Open Sans';
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
 body{
     font-family: 'Open Sans';
     margin: 0;
+    height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
 }
 .wrapper:not(.saglasnosti){
     margin-bottom: 40px !important;
     width: 80%;
     margin: auto;
+}
+.wrapper.ime{
+    margin-top: 40px;
 }
 .wrapper.saglasnosti{
     display: flex;
@@ -80,7 +92,8 @@ body{
     margin-bottom: 40px;
 }
 .wrapper.saglasnosti .bolded,
-a{
+.wrapper  a,
+body > a{
     color: #1d723b;
     font-weight: bold;
 }
@@ -117,12 +130,16 @@ a{
     display: flex;
     align-items: center;
 }
+.logo_wrapper{
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 .main.logo{
     height: 65px;
     width: 65px;
     display: block;
     margin: auto;
-    /* margin-top: 20px; */
+    margin-top: 20px;
 }
 h1{
     font-size: 20px;
@@ -134,12 +151,15 @@ h1::first-letter{
     text-align: center;
     text-transform: uppercase;
 }
-p,
-a{
+.wrapper p,
+.wrapper a,
+body > p,
+body > a{
     text-align: center;
     display: block;
 }
-a{
+.wrapper a,
+body > a{
     margin-top: 20px;
     margin-bottom: 20px;
     text-decoration: none;
@@ -156,8 +176,9 @@ a{
     -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
     box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
 }
-.backdrop:not(.hidden){
-    height: 100vh;
+.backdrop:not(.hidden),
+.backdrop_sucess:not(.hidden){
+    height: 100%;
     width: 100%;
     position: absolute;
     background-color: #093141;
@@ -168,7 +189,27 @@ a{
     align-items: center;
     justify-content: center;
 }
-.backdrop.hidden{
+.backdrop_sucess{
+    flex-direction: column;
+}
+.backdrop_sucess a,
+.backdrop_sucess p{
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+.backdrop_sucess a{
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 10px 9px 10px 9px;
+    background-color: #116b8f;
+    -webkit-box-shadow: 6px 4px 17px -7px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 6px 4px 17px -7px rgba(255, 255, 255, 0.75);
+    box-shadow: 6px 4px 17px -7px rgba(253, 253, 253, 0.75);
+}
+.backdrop.hidden,
+.backdrop_sucess.hidden{
     display: none;
 }
 .backdrop .loader{

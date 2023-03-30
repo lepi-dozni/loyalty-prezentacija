@@ -368,7 +368,8 @@ async function upisiBarcode(ID) {
         .then(result => console.log(result))
         .then(() => {
             $('.backdrop').removeClass('hidden')
-            alert('USPESNA REGISTRACIJA!')
+            $('.backdrop_sucess').removeClass('hidden')
+            // alert('USPESNA REGISTRACIJA!')
             // var lokacija = window.location.href.replace('registracija', 'login')
             // window.location.href = lokacija
 
