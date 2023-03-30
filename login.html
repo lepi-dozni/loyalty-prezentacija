@@ -7,42 +7,46 @@
     <title>Login</title>
 
     <!-- fontovi -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700" rel="stylesheet" type="text/css">
     <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/login.js"></script>
     <script src="js/JsBarcode.all.min.js"></script>
 
     <!-- css -->
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/globals.css">
 </head>
 <body>
 
     
 
-    <div id="login-page">
+    <div id="login-page" class="main-wrapper">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
         <h1>Login</h1>
         <div class="wrapper">
-            <label for="email">Mejl:</label>
-            <input type="email" id="email" name="email">
+            <!-- <label for="email">Mejl:</label> -->
+            <input type="email" id="email" name="email" placeholder="Email" class="border-bottom-only">
             <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite validan mejl!</div>
             <div id="zauzet-mejl" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Korisnik sa ovim mejlom ne postoji!</div>
           </div>
           
           <div class="wrapper">
-            <label for="password">Lozinka:</label>
-            <input type="password" id="password" name="password">
+            <!-- <label for="password">Lozinka:</label> -->
+            <input type="password" id="password" name="password" placeholder="Lozinka" class="border-bottom-only">
             <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Pogresna lozinka!</div>
             <div id="prazna_lozinka" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite lozinku!</div>
           </div>
           <div class="wrapper">
-            <a href="zaboravljena_lozinka.html">Zaboravljena lozinka</a>
+            <a href="zaboravljena_lozinka.html" class="green-text">Zaboravljena lozinka</a>
           </div>
           <br>
         <button id="dugme">LOGIN</button>            
     </div>
 
-    <div id="account-page" class="hide">
+    <div id="account-page" class="hide main-wrapper">
         <h1>Account login-page</h1>
         <div class="wrapper">
             <span>Ime: </span>

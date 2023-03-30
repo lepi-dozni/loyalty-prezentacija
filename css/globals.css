@@ -1,0 +1,170 @@
+/* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html{
+    font-family: 'Open Sans' !important;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    font-family: 'Open Sans' !important;
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+.green-text{
+    color: #1d723b;
+    text-decoration: none;
+}
+.dark-blue-background{
+    background-color: #093141;
+}
+.border-bottom-only{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #000;
+}
+.hide {
+    display: none;
+}
+.main-wrapper{
+    width: 80%;
+    margin: auto;
+}
+.continue-button{
+    margin: auto;
+    display: block;
+    padding: 10px 9px 10px 9px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    background-color: #286488;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+}
+/* css reset */
+/* logo */
+.logo_wrapper{
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.main.logo{
+    height: 65px;
+    width: 65px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+/* logo */
+/* login page */
+#login-page{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#login-page .wrapper,
+#account-page .wrapper,
+#login-page h1,
+#account-page h1{
+    margin-bottom: 40px;
+}
+#login-page h1,
+#account-page h1{
+    text-align: center;
+}
+#login-page a{
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+#login-page input,
+#login-page .wrapper{
+    width: 100%;
+}
+#login-page #dugme{
+    padding: 10px 9px 10px 9px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    background-color: #286488;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+}
+/* login page */
+/* forgotten password */
+.forgotten-password #mauticform_input_izgubljenalozinkaloyalty_submit{
+    padding: 10px 9px 10px 9px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    background-color: #286488;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    margin: auto;
+    display: block !important;
+}
+.forgotten-password .wrapper{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+/* forgotten password */
