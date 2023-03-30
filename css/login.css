@@ -1,7 +1,192 @@
-.wrapper {
-    margin-bottom: 20px;
+/* pages main */
+/* #login-page .wrapper,
+#account-page .wrapper,
+#login-page h1,
+#account-page h1,
+#home-page .wrapper,
+#home-page h1{
+    margin-bottom: 40px;
+} */
+.main-wrapper .wrapper{
+    margin-bottom: 40px;
+}
+.main-wrapper h1{
+    text-align: center;
+    font-weight: bold;
+}
+/* #login-page h1,
+#home-page h1,
+#account-page h1{
+    text-align: center;
+} */
+/* pages main */
+/* home page */
+.wrapper.home-link{
+    width: 140px;
+    height: 140px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px !important;
+}
+.wrapper.home-link i{
+    margin-top: 10px;
+}
+.main-home-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+}
+/* home page */
+/* barcode page */
+#barcode-page p{
+    margin-top: 20px;
+    text-align: center;
+}
+#barcode-holder{
+    width: 200px;
+    height: 150px;
+    border: 1px solid black;
+    margin-top: 20px !important;
+    margin: auto;
+}
+#barcode-number-holder{
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+    margin-top: 20px !important;
+    margin: auto;
+}
+/* barcode page */
+/* progress page */
+#progress-value{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+.single-progress-bar-wrapper{
+    margin-top: 20px;
+}
+#progress-bar-holder{
+    width: 100%;
+    height: 10px;
+    border: 1px solid rgb(194, 194, 194);
+    margin-top: 20px !important;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    border-radius: 5px;
+}
+#single-progress-bar-holder{
+    width: 100%;
+    height: 10px;
+    border: 1px solid rgb(194, 194, 194);
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    border-radius: 5px;
+}
+#progress-page button{
+    margin-top: 20px;
+}
+.main-progress-wrapper{
+    width: 100%;
+}
+.upper-progress-product,
+.lower-progress-product{
+    width: 100%;
+    height: 70px;
+    /* border: 1px solid black; */
+}
+.upper-progress-product .item-holder{
+    float: left;
+    margin-left: 50px;
+}
+.lower-progress-product .item-holder{
+    float: right;
+    margin-right: 50px;
+    margin-top: 16px;
+}
+.lower-progress-product .item-holder-indicator{
+    margin-top: -18px;
+}
+.upper-progress-product .item-holder-indicator{
+    margin-top: 50px;
+}
+.item-holder{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid rgb(194, 194, 194); /* gray */
+    background-size: cover;
+    background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/focused-cat-dan-kinghorn.jpg');
+}
+.item-holder-indicator{
+    width: 2px;
+    height: 18px;
+    background-color:rgb(194, 194, 194);
+    display: block;
+    margin: auto;
+}
+#progress-red {
+    border: none;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    border-radius: 10px;
+    position: relative;
+    top: -7px;
 }
 
-.hide {
-    display: none;
+#progress-red::-moz-progress-bar {
+    background: lightblue;
 }
+
+#progress-red::-webkit-progress-value {
+    background: red;
+}
+
+#progress-red::-webkit-progress-bar {
+    background: transparent;
+}
+#progress-green,
+#progress-single {
+    border: none;
+    width: 100%;
+    height: 10px;
+    background: rgb(9, 209, 92);
+    border-radius: 10px;
+    position: absolute;
+}
+
+#progress-green,
+#progress-single {
+    color: lightblue;
+}
+
+#progress-green::-moz-progress-bar,
+#progress-single::-moz-progress-bar {
+    background: lightblue;
+}
+
+#progress-green::-webkit-progress-value,
+#progress-single::-webkit-progress-value{
+    background: rgb(9, 209, 92);
+}
+
+#progress-green::-webkit-progress-bar,
+#progress-single::-webkit-progress-bar{
+    background: rgb(182, 182, 182);
+}
+/* progress page */

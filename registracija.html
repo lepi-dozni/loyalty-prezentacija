@@ -47,41 +47,41 @@
     <div class="logo_wrapper">
         <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
     </div>
-    <h1>REGISTRACIJA</h1>
+    <h1>REGISTRATION</h1>
 
     <div class="wrapper ime">
         <!-- <label for="ime">Ime:</label> -->
-        <input type="text" id="ime" name="ime" placeholder="Ime">
-        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Obavezno polje!</div>
+        <input type="text" id="ime" name="ime" placeholder="Name">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">This field is required</div>
     </div>
 
     <div class="wrapper prezime">
         <!-- <label for="prezime">Prezime:</label> -->
-        <input type="text" id="prezime" name="prezime" placeholder="Prezime">
-        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Obavezno polje!</div>
+        <input type="text" id="prezime" name="prezime" placeholder="Surname">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">This field is required</div>
     </div>
 
     <div class="wrapper email">
         <!-- <label for="email">Mejl:</label> -->
         <input type="email" id="email" name="email" placeholder="Email">
-        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite validan mejl!</div>
-        <div id="zauzet-mejl" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Korisnik sa ovim mejlom već postoji!</div>
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Enter valid email!</div>
+        <div id="zauzet-mejl" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">User with this email alredy exists!</div>
     </div>
 
     <div class="wrapper lozinka">
         <!-- <label for="password">Lozinka:</label> -->
-        <input type="password" id="password" name="password" placeholder="Lozinka">
-        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Lozinka mora sadrzati kombinaciju slova i brojeva, i mora biti duza od 5 karaktera!</div>
+        <input type="password" id="password" name="password" placeholder="Password">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">The password must contain a combination of letters and numbers, and must be 5 characters long!</div>
     </div>
 
     <div class="wrapper potvrda-lozinke">
         <!-- <label for="confirm-password">Potvrdite lozinku:</label> -->
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Potvrdite lozinku">
-        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Lozinke moraju biti iste!</div>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password">
+        <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Passwords must be the same!</div>
     </div>
     <div class="wrapper rodjendan">
         <select id="rodjendan_dan">
-            <option value="">Dan</option>
+            <option value="">Day</option>
             <script>
               for (let day = 1; day <= 31; day++) {
                 document.write(`<option value="${day}">${day}</option>`);
@@ -90,7 +90,7 @@
           </select>
 
         <select id="rodjendan_mesec">
-            <option value="">Mesec</option>
+            <option value="">Month</option>
             <script>
               const months = [
                 'Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul',
@@ -104,7 +104,7 @@
           </select>
 
         <select id="rodjendan_godina">
-            <option value="">Godina</option>
+            <option value="">Year</option>
             <script>
               const current_year = new Date().getFullYear();
               for (let year = current_year - 100; year <= current_year; year++) {
@@ -115,17 +115,17 @@
         <div class="hide error-poruka" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite datum rodjenja!</div>
     </div>
     <div class="wrapper pol">
-        <p>Pol:</p>
+        <p>Gender:</p>
         <label>
-            <input type="radio" name="gender" value="muski"> Muški
+            <input type="radio" name="gender" value="muski"> Male
           </label>
 
         <label>
-            <input type="radio" name="gender" value="zenski"> Ženski
+            <input type="radio" name="gender" value="zenski"> Female
           </label>
 
         <label>
-            <input type="radio" name="gender" value="drugo"> Drugo
+            <input type="radio" name="gender" value="drugo"> Other
           </label>
 
         <script>
@@ -141,21 +141,21 @@
     </div>
     <div class="wrapper saglasnosti">
         <label>
-            <input type="checkbox" name="uslovi" value="uslovi"> Prihvatam <span class="bolded">Uslove loyalty programa</span>
+            <input type="checkbox" name="uslovi" value="uslovi"> I agree to the <span class="bolded">Terms and conditions</span> as set out by the <span class="bolded">User Agreemenet</span>
         </label>
-        <div class="hide error-poruka" style="font-size: 14px;font-weight: 400;color: #ba0505;">Obavezno polje!</div>
+        <div class="hide error-poruka" style="font-size: 14px;font-weight: 400;color: #ba0505;">This field is required</div>
         <label>
-            <input type="checkbox" name="promo" value="promo"> Želim da primam <span class="bolded">promotivne ponude</span>
+            <input type="checkbox" name="promo" value="promo"> I want to recive <span class="bolded">Newsletters and notifications</span>
         </label>
         <label>
-            <input type="checkbox" name="personalizovana_ponuda" value="personalizovana_ponuda"> Želim da primam <span class="bolded">personalizovane ponude</span>
+            <input type="checkbox" name="personalizovana_ponuda" value="personalizovana_ponuda"> I want to recive <span class="bolded">personalized offers</span>
         </label>
     </div>
     <br>
-    <button id="dugme">REGISTRUJ SE</button>
+    <button id="dugme">Create account</button>
     <br>
-    <p>Imaš nalog?</p>
-    <a href="login.html">Uloguj se</a>
+    <p>Already have an account?</p>
+    <a href="login.html">Log in</a>
 
     <script type="text/javascript">
 

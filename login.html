@@ -8,6 +8,7 @@
 
     <!-- fontovi -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/login.js"></script>
@@ -18,10 +19,28 @@
     <link rel="stylesheet" href="css/globals.css">
 </head>
 <body>
-
-    
-
-    <div id="login-page" class="main-wrapper">
+    <div class="menu-wrapper">
+        <i class="fa fa-solid fa-bars"></i>
+    </div>
+    <nav class="main-nav hidden-opacity">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <button class="close-menu">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+        <ul class="nav-list">
+            <li><a class="dark-blue-text" href="#"><i class="fa fa-home" aria-hidden="true"></i><p>Home</p></a></li>
+            <li><a class="dark-blue-text" href="#"><i class="fa fa-building" aria-hidden="true"></i><p>About us</p></a></li>
+            <li><a class="dark-blue-text" href="#"><i class="fa fa-building-o" aria-hidden="true"></i><p>Campaign terms</p></a></li>
+            <li><a class="dark-blue-text" href="#"><i class="fa fa-globe" aria-hidden="true"></i><p>Our network</p></a></li>
+            <li><a class="dark-blue-text" href="#"><i class="fa fa-envelope" aria-hidden="true"></i><p>Mail box</p></a></li>
+            <li><a class="dark-blue-text" href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i><p>Contact us</p></a></li>
+            <li><a class="dark-blue-text" href="#"><i class="fa fa-user" aria-hidden="true"></i><p>My profile</p></a></li>
+        </ul>
+        <button id="menu-dugme" class="continue-button">ADD NEW POINTS</button>
+    </nav>
+    <div id="login-page" class="main-wrapper hide">
         <div class="logo_wrapper">
             <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
         </div>
@@ -29,31 +48,31 @@
         <div class="wrapper">
             <!-- <label for="email">Mejl:</label> -->
             <input type="email" id="email" name="email" placeholder="Email" class="border-bottom-only">
-            <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite validan mejl!</div>
-            <div id="zauzet-mejl" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Korisnik sa ovim mejlom ne postoji!</div>
+            <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Please enter a valid email!</div>
+            <div id="zauzet-mejl" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">The user with this email does not exist!</div>
           </div>
           
           <div class="wrapper">
             <!-- <label for="password">Lozinka:</label> -->
             <input type="password" id="password" name="password" placeholder="Lozinka" class="border-bottom-only">
-            <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Pogresna lozinka!</div>
+            <div class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Incorrect password!</div>
             <div id="prazna_lozinka" class="hide" style="font-size: 14px;font-weight: 400;color: #ba0505;">Unesite lozinku!</div>
           </div>
           <div class="wrapper">
-            <a href="zaboravljena_lozinka.html" class="green-text">Zaboravljena lozinka</a>
+            <a href="zaboravljena_lozinka.html" class="green-text">Forgot password?</a>
           </div>
           <br>
         <button id="dugme">LOGIN</button>            
     </div>
-
+    <!-- account page -->
     <div id="account-page" class="hide main-wrapper">
         <h1>Account login-page</h1>
         <div class="wrapper">
-            <span>Ime: </span>
+            <span>Name: </span>
             <span id="ime"></span>
         </div>
         <div class="wrapper">
-            <span>Prezime: </span>
+            <span>Surname: </span>
             <span id="prezime"></span>
         </div>
         <div class="wrapper">
@@ -65,7 +84,93 @@
             <span id="barkod"></span>
         </div>                
     </div>
-    
+    <!-- account page -->
+    <!-- home page -->
+    <div id="home-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1>Wellcome !</h1>
+        <div class="main-home-wrapper">
+            <div class="wrapper home-link">
+                <p>ADD NEW POINTS</p>
+                <i class="fa fa-barcode" aria-hidden="true"></i>
+            </div>
+            <div class="wrapper home-link">
+                <p>MY POINTS</p>
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+            </div>
+            <div class="wrapper home-link">
+                <p>DISCOUNTS</p>
+                <i class="fa fa-area-chart" aria-hidden="true"></i>
+            </div> 
+            <div class="wrapper home-link">
+                <p>SURVEYS</p>
+                <i class="fa fa-sharp fa-regular fa-square-poll-horizontal"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+            </div> 
+            <div class="wrapper home-link">
+                <p>CATALOGS</p>
+                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+            </div> 
+        </div>        
+    </div>
+    <!-- home page -->
+    <!-- barcode page -->
+    <div id="barcode-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Add new points</h1>
+        <div class="main-barcode-wrapper">
+            <p class="dark-blue-text">Show you unique barcode to the seller !</p>
+            <div id="barcode-holder"></div>
+            <p class="dark-blue-text">Use numerical code for online purchase: </p>
+            <div id="barcode-number-holder"></div>
+            <p class="dark-blue-text">Enter this numerical code when shopping in our online store www.megashop201.com</p>
+            <button class="btn-back">Back</button>
+        </div>        
+    </div>
+    <!-- barcode page -->
+    <!-- barcode page -->
+    <div id="progress-page" class="main-wrapper">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">My points</h1>
+        <div class="main-progress-wrapper">
+            <p class="dark-blue-text main" id="progress-value">165,44 e</p>
+            <div id="progress-bar-holder">
+                <progress id="progress-green" value="165" max="250"></progress>
+                <progress id="progress-red" value="20" max="250"></progress>
+            </div>
+            <button class="continue-button">USE CASHBACK</button>
+            <div class="single-progress-bar-wrapper">
+                <div class="upper-progress-product">
+                    <div class="item-holder">
+                        <div class="item-holder-indicator"></div>
+                    </div>
+                    <div class="item-holder">
+                        <div class="item-holder-indicator"></div>
+                    </div>
+                </div>
+                <div id="single-progress-bar-holder">
+                    <progress id="progress-single" value="165" max="250"></progress>
+                </div>
+                <div class="lower-progress-product">
+                    <div class="item-holder">
+                        <div class="item-holder-indicator"></div>
+                    </div>
+                    <div class="item-holder">
+                        <div class="item-holder-indicator"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="continue-button">BUY PRODUCT</button>
+            <button class="btn-back">Back</button>
+        </div>        
+    </div>
+    <!-- barcode page -->
 
     <script>
 

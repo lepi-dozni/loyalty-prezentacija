@@ -66,18 +66,36 @@ body{
 .dark-blue-background{
     background-color: #093141;
 }
+.dark-blue-text{
+    color: #093141;
+}
 .border-bottom-only{
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 2px solid #000;
 }
-.hide {
-    display: none;
+.hidden-opacity{
+    opacity: 0;
+    visibility: hidden;
+}
+.hide,
+.main-wrapper.hide{
+    display: none !important;
 }
 .main-wrapper{
     width: 80%;
     margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px !important;
+}
+.fa{
+    font-size: 30px;
 }
 .continue-button{
     margin: auto;
@@ -90,6 +108,22 @@ body{
     -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
     box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+}
+.btn-back{
+    margin: auto;
+    display: block;
+    padding: 10px 9px 10px 9px;
+    border-radius: 7px;
+    border: none;
+    color: #286488;
+    background-color: #fff;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    margin-top: 40px;
+    font-weight: bold;
+    width: 80%;
+    border: 1px solid rgb(233, 233, 233);
 }
 /* css reset */
 /* logo */
@@ -113,16 +147,6 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-#login-page .wrapper,
-#account-page .wrapper,
-#login-page h1,
-#account-page h1{
-    margin-bottom: 40px;
-}
-#login-page h1,
-#account-page h1{
-    text-align: center;
 }
 #login-page a{
     font-weight: bold;
@@ -168,3 +192,58 @@ body{
     margin: auto;
 }
 /* forgotten password */
+/* menu */
+.menu-wrapper{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+}
+.main-nav{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+}
+.nav-list a{
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.nav-list a p{
+    margin-left: 10px;
+}
+.nav-list a .fa{
+    width: 40px;
+}
+.nav-list li{
+    margin-top: 20px;
+    padding-left: 20px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.close-menu{
+    height: 34px;
+    width: 34px;
+    position: absolute;
+    right: 10px;
+    top: 36px;
+    padding: 0;    
+    background: #fff;
+    border: none;
+}
+/* menu */
