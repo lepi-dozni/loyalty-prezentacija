@@ -127,6 +127,7 @@ async function proveriMejl(mejl, password) {
         if(objekat.total > 0) {
             console.log('Ovaj mejl je zauzet!')
             $('#zauzet-mejl').removeClass('hide')
+            $('.backdrop').addClass('hidden')
         } else {
             console.log('NEMA KORISNIKA!')
             $('#zauzet-mejl').addClass('hide')
@@ -367,8 +368,9 @@ async function upisiBarcode(ID) {
         //   .then(text => console.log(text))
         .then(result => console.log(result))
         .then(() => {
-
-            alert('USPESNA REGISTRACIJA!')
+            $('.backdrop').removeClass('hidden')
+            $('.backdrop_sucess').removeClass('hidden')
+            // alert('USPESNA REGISTRACIJA!')
             // var lokacija = window.location.href.replace('registracija', 'login')
             // window.location.href = lokacija
 

@@ -206,3 +206,14 @@ function showUser(ID, email) {
     .catch(error => console.log('error', error));
 
 }
+// main menu 
+$( document ).ready(function() {
+    $('.close-menu').on('click', function(){
+        $('.main-nav').addClass('hidden-opacity')
+    })
+    $('.menu-wrapper').on('click', function(){
+        $('.main-nav').removeClass('hidden-opacity')
+    })
+});
+
+// main menu 
