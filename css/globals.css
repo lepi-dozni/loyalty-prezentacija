@@ -67,7 +67,7 @@ body{
     background-color: #093141;
 }
 .dark-blue-text{
-    color: #093141;
+    color: #055473;
 }
 .border-bottom-only{
     border-top: none;
@@ -124,12 +124,21 @@ body{
     font-weight: bold;
     width: 80%;
     border: 1px solid rgb(233, 233, 233);
+    position: absolute;
+    bottom: 20px;
 }
 /* css reset */
 /* logo */
-.logo_wrapper{
+.logo_wrapper:not(.main-nav .logo_wrapper){
     overflow: hidden;
     margin-bottom: 20px;
+    position: absolute;
+    top: 5px;
+}
+.main-nav .logo_wrapper{
+    overflow: hidden;
+    margin-bottom: 20px;
+    top: 5px;
 }
 .main.logo{
     height: 65px;

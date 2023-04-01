@@ -48,26 +48,110 @@
     margin-top: 40px;
 }
 /* home page */
-/* barcode page */
-#barcode-page p{
+/* barcode page - cashback page */
+#barcode-page p,
+#cashback-page p,
+#buy-product-page p,
+#plp-page p:not(.benefit-program),
+#survey-page p:not(.benefit-program){
     margin-top: 20px;
     text-align: center;
+    font-weight: bold;
 }
-#barcode-holder{
+#barcode-holder,
+#cashback-page-barcode-holder{
     width: 200px;
     height: 150px;
     border: 1px solid black;
     margin-top: 20px !important;
     margin: auto;
 }
-#barcode-number-holder{
+#barcode-number-holder,
+#cashback-page-barcode-number-holder{
     width: 200px;
     height: 50px;
     border: 1px solid black;
     margin-top: 20px !important;
     margin: auto;
 }
-/* barcode page */
+#cashback-num,
+#product-price{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+/* barcode page - cashback page */
+/* buy product page */
+.product-id-wrpper,
+.product-id-wrpper{
+    width: 80%;
+    margin-top: 20px !important;
+    height: auto;
+    margin: auto;
+    border: 1px solid rgb(194, 194, 194);
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    text-align: center;
+    border-radius: 10px;
+}
+#product-category{
+    color: #000 !important;
+    font-weight: unset !important;
+    margin-top: 10px !important;
+}
+#product-name,
+#product-model{
+    margin-top: 5px !important;
+    font-size: 20px;
+}
+#company-name{
+    margin-top: 10px !important;
+}
+#product-model{
+    margin-bottom: 10px;
+}
+.buy-product-about,
+#company-phone,
+#company-website{
+    font-weight: unset !important;
+}
+#company-phone,
+#company-website{
+    margin-top: 5px !important;
+}
+#company-phone span,
+#company-website span{
+    font-weight: bold;
+}
+#company-website{
+    margin-bottom: 10px !important;
+}
+.qr-bar-code-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.qr-bar-promo-code-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.qr-bar-code-wrapper button,
+.qr-bar-promo-code-wrapper button{
+    padding: 10px 15px 10px 15px;
+}
+.promo-code-button{
+    margin-top: 20px !important;
+}
+/* buy product page */
 /* progress page */
 #progress-value{
     margin-top: 20px;
@@ -190,3 +274,124 @@
     background: rgb(182, 182, 182);
 }
 /* progress page */
+/* PLP */
+.benefit-card img{
+    width: 60px;
+    height: auto;
+}
+p.benefit-program{
+    text-align: center;
+    font-weight: bold;
+}
+p.benefit-program + p{
+    text-align: center;
+    font-weight: unset !important;
+    margin-top: 5px !important;
+}
+.main-plp-wrapper{
+    width: 100%;
+}
+.benefit-card{
+    margin-top: 40px !important;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    border: 1px solid rgb(194, 194, 194);
+}
+#plp-page.main-wrapper,
+#survey-page.main-wrapper{
+    justify-content: center;
+}
+/* PLP */
+/* PDP*/
+.main-pdp-wrapper,
+.product-suggestions,
+.main-catalog-wrapper,
+.catalog-suggestions{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.main-pdp-img{
+    width: 80%;
+    margin-top: 20px;
+}
+#pdp-page{
+    flex-direction: row;
+    height: auto;
+}
+#catalogs-page{
+    flex-direction: row;
+    height: 100%;
+}
+#pdp-page p{
+    text-align: center;
+    margin-top: 20px;
+}
+#pdp-page .btn-back{
+    margin-bottom: 40px;
+}
+.product-suggestions img{
+    width: 39%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* PDP*/
+/* catalogs */
+.catalog-suggestions img{
+    width: 100%;
+}
+.catalog-suggestions a{
+    display: block;
+    width: 39%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#catalogs-page p{
+    font-weight: bold;
+}
+/* catalogs */
+/* survey pdp page */
+#survey-pdp-page p{
+    text-align: center;
+    margin-top: 40px;
+}
+.main-survey-wrapper{
+    width: 100%;
+}
+.survey-logo{
+    width: 100px;
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+}
+.checkbox-wrpper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: self-start;
+    margin-bottom: 20px !important;
+    margin-top: 40px;
+    padding-left: 77px;
+}
+.checkbox-wrpper label{
+    margin-top: 10px;
+}
+#survey-pdp-page .continue-button{
+    padding: 10px 15px 10px 15px;
+    margin-top: 50px;
+}
+/* survey pdp page */
