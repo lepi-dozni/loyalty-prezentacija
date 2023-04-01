@@ -127,6 +127,7 @@ async function proveriMejl(mejl, password) {
         if(objekat.total > 0) {
             console.log('Ovaj mejl je zauzet!')
             $('#zauzet-mejl').removeClass('hide')
+            $('.backdrop').addClass('hidden')
         } else {
             console.log('NEMA KORISNIKA!')
             $('#zauzet-mejl').addClass('hide')
