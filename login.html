@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="css/globals.css">
 </head>
 <body>
+    <div class="backdrop hide">
+        <img src="https://usagif.com/wp-content/uploads/loading-1.gif" class="loader"/>
+    </div>
     <div class="menu-wrapper">
         <i class="fa fa-solid fa-bars"></i>
     </div>
@@ -40,7 +43,7 @@
         </ul>
         <button id="menu-dugme" class="continue-button">ADD NEW POINTS</button>
     </nav>
-    <div id="login-page" class="main-wrapper hide">
+    <div id="login-page" class="main-wrapper">
         <div class="logo_wrapper">
             <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
         </div>
@@ -65,7 +68,7 @@
         <button id="dugme">LOGIN</button>            
     </div>
     <!-- account page -->
-    <div id="account-page" class="hide main-wrapper">
+    <!-- <div id="account-page" class="hide main-wrapper hide">
         <h1>Account login-page</h1>
         <div class="wrapper">
             <span>Name: </span>
@@ -83,10 +86,10 @@
             <div>Barkod: </div>
             <span id="barkod"></span>
         </div>                
-    </div>
+    </div> -->
     <!-- account page -->
     <!-- home page -->
-    <div id="home-page" class="main-wrapper">
+    <div id="home-page" class="main-wrapper hide">
         <div class="logo_wrapper">
             <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
         </div>
@@ -371,8 +374,9 @@
         <div class="main-survey-wrapper">
             <img class="survey-logo" src="https://static.demilked.com/wp-content/uploads/2016/08/biggest-maine-coon-cat-photography-robert-sijka-12.jpg"/>
             <p class="dark-blue-text">Please choose at least one of the following questions:</p>
-            <p class="dark-blue-text">Which of the listed products woukd you like to be included in the next motivational program?</p>
-            <div class="checkbox-wrpper">
+            <script type="text/javascript" src="https://loyalty.m1.rs/form/generate.js?id=2"></script>
+            <!-- <p class="dark-blue-text">Which of the listed products woukd you like to be included in the next motivational program?</p> -->
+            <!-- <div class="checkbox-wrpper">
                 <label class="dark-blue-text">
                     <input type="checkbox"/>
                     Cell phone
@@ -394,7 +398,7 @@
                     Other
                 </label>
             </div>
-            <button class="continue-button">Send answer</button>
+            <button class="continue-button">Send answer</button> -->
         </div>    
         <button class="btn-back">Back</button>    
     </div>
@@ -410,6 +414,8 @@
                 if($('#password').val().length > 0) {
                     $('#prazna_lozinka').addClass('hide')
                     checkUserEmail($('#email').val())
+                    $('.backdrop').removeClass('hide')
+
                 } else {
                     $('#prazna_lozinka').removeClass('hide')
                 }

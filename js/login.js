@@ -50,6 +50,7 @@ async function checkUserEmail(email) {
         if(objekat.total == 0) {
             console.log('NEMA KORISNIKA!')
             $('#zauzet-mejl').removeClass('hide')
+            $('.backdrop').addClass('hide')
         } else {
             console.log('POSTOJI MEJL')
 
@@ -96,18 +97,23 @@ async function checkUserPassword(ID, password, email) {
         console.log(objekat.contact.fields.personal.loyalty_user_password.value)
 
         if(user_password == objekat.contact.fields.personal.loyalty_user_password.value) {
-            alert('USPESAN LOGIN')
+            // alert('USPESAN LOGIN')
 
             $('#password').next().addClass('hide')
 
-            // $('#login-page').addClass('hide')
+            $('#login-page').addClass('hide')
             // $('#account-page').removeClass('hide')
 
-            // showUser(user_id, user_email)
+            // $('#login-page').addClass('hide')
+            // $('#account-page').removeClass('hide')
+            $('#home-page').removeClass('hide')
+
+            showUser(user_id, user_email)
 
         } else {
             console.log('POGRESAN PASSWORD')
             $('#password').next().removeClass('hide')
+            $('.backdrop').addClass('hide')
         }
                                
     })
@@ -148,9 +154,9 @@ function showUser(ID, email) {
         console.log(objekat)
 
 
-        $('#ime').text(objekat.contact.fields.core.firstname.value) 
-        $('#prezime').text(objekat.contact.fields.core.lastname.value) 
-        $('#account-email').text(user_email)
+        // $('#ime').text(objekat.contact.fields.core.firstname.value) 
+        // $('#prezime').text(objekat.contact.fields.core.lastname.value) 
+        // $('#account-email').text(user_email)
         
         
         console.log('USER ID: ' + user_id)
@@ -198,9 +204,26 @@ function showUser(ID, email) {
                 break; 
         }      
         
-        $('#barkod').append('<svg id="barcode"></svg>')
+        $('#barcode-holder').append('<svg id="barcode"></svg>')
+        
+        // Dodavanje generisanog barkoda i numerickog barkoda na barcode page
         JsBarcode("#barcode", barcode);
-                        
+        $('#barcode-number-holder').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
+
+        // Dodavanje loyalty bodova na progress page
+        $('#progress-value').text(objekat.contact.fields.personal.loyalty_bodovi.value)
+        $('#progress-green').attr('value', objekat.contact.fields.personal.loyalty_bodovi.value)
+        $('#progress-single').attr('value', objekat.contact.fields.personal.loyalty_bodovi.value)
+
+        // Dodavanje generisanog barkoda i numerickog barkoda na cashback page
+        $('#cashback-page-barcode-holder').append('<svg id="barcode-cashback"></svg>')
+        JsBarcode("#barcode-cashback", barcode)
+        $('#cashback-page-barcode-number-holder').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
+        $('#cashback-num').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
+
+        // Dodavanje loyalty bodova na buy product page
+        $('#product-price').text(objekat.contact.fields.personal.loyalty_bodovi.value)
+        $('.backdrop').addClass('hide')                
                         
     })
     .catch(error => console.log('error', error));
