@@ -153,6 +153,13 @@
 }
 /* buy product page */
 /* progress page */
+#progress-page.main-wrapper,
+#buy-product-page.main-wrapper,
+#cashback-page.main-wrapper,
+#home-page.main-wrapper,
+#barcode-page.main-wrapper{
+    flex-direction: column;
+}
 #progress-value{
     margin-top: 20px;
     text-align: center;
@@ -310,6 +317,7 @@ p.benefit-program + p{
 #survey-page.main-wrapper{
     justify-content: center;
 }
+
 /* PLP */
 /* PDP*/
 .main-pdp-wrapper,
@@ -342,6 +350,10 @@ p.benefit-program + p{
 #pdp-page .btn-back{
     margin-bottom: 40px;
 }
+#progress-page .btn-back,
+#barcode-page .btn-back{
+    position: absolute;
+}
 .product-suggestions img{
     width: 39%;
     margin-top: 20px;
@@ -369,6 +381,7 @@ p.benefit-program + p{
 }
 .main-survey-wrapper{
     width: 100%;
+    overflow: hidden;
 }
 .survey-logo{
     width: 100px;
