@@ -208,12 +208,21 @@ function showUser(ID, email) {
 }
 // main menu 
 $( document ).ready(function() {
+    // $('.close-menu').on('click', function(){
+    //     $('.main-nav').addClass('hidden-opacity').addClass('.nav-margin-left')
+    // })
+    // $('.menu-wrapper').on('click', function(){
+    //     $('.main-nav').removeClass('hidden-opacity').removeClass('.nav-margin-left')
+    // })
     $('.close-menu').on('click', function(){
-        $('.main-nav').addClass('hidden-opacity')
+        $('.main-nav').addClass('nav-margin-left')
+        $('.close-menu').addClass('close-rotate')
     })
     $('.menu-wrapper').on('click', function(){
-        $('.main-nav').removeClass('hidden-opacity')
+        $('.main-nav').removeClass('nav-margin-left')
+        $('.close-menu').removeClass('close-rotate')
     })
+    // close-menu close-rotate
 });
 
 // main menu 
