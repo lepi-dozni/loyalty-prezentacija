@@ -132,8 +132,8 @@
         </div>        
     </div>
     <!-- barcode page -->
-    <!-- barcode page -->
-    <div id="progress-page" class="main-wrapper">
+    <!-- progress bar page -->
+    <div id="progress-page" class="main-wrapper hide">
         <div class="logo_wrapper">
             <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
         </div>
@@ -170,8 +170,235 @@
             <button class="btn-back">Back</button>
         </div>        
     </div>
-    <!-- barcode page -->
-
+    <!-- progress bar page -->
+    <!-- use cashback page -->
+    <div id="cashback-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Use Cashback</h1>
+        <div class="main-barcode-wrapper">
+            <p class="dark-blue-text">Your bill will be reduced by the following amount:</p>
+            <div id="cashback-num">165,44 e</div>
+            <p class="dark-blue-text">Show your barcode to the seller !</p>
+            <div id="cashback-page-barcode-holder"></div>
+            <p class="dark-blue-text">Use numerical code for online purchase: </p>
+            <div id="cashback-page-barcode-number-holder"></div>
+            <p class="dark-blue-text">Enter this numerical code when shopping in our online store www.megashop201.com</p>
+            <button class="btn-back">Back</button>
+        </div>        
+    </div>
+    <!-- use cashback page -->
+    <!-- buy product page -->
+    <div id="buy-product-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Buy product</h1>
+        <div class="main-barcode-wrapper">
+            <p class="dark-blue-text">Congrats ! you have selected the following product:</p>
+            <div class="product-id-wrpper">
+                <p id="product-category">Washing machine</p>
+                <p id="product-name">BEKO</p>
+                <p id="product-model">WEY104064</p>
+            </div>
+            <p class="dark-blue-text">You can now buy this product for:</p>
+            <div id="product-price">150,99 e</div>
+            <!-- changing paragraph section -->
+            <!-- <p class="buy-product-about dark-blue-text">
+                Please check availability in our retail
+                stores by calling the following phone 
+                number: 0800/300200. When purchasing 
+                this product in our storesm please show
+                your QR or barcode to seller. Click below
+                to generate codes:
+            </p>
+            <div class="qr-bar-code-wrapper">
+                <button class="continue-button">QR code</button>
+                <button class="continue-button">Barcode</button>
+            </div>
+            <p class="buy-product-about dark-blue-text">
+                If you want to purchase online, please generate
+                a promo code by clicking on button below
+            </p>
+            <button class="continue-button promo-code-button">Promo code</button> -->
+            <!-- changing paragraph section -->
+            <!-- changing card section -->
+            <p class="buy-product-about dark-blue-text">
+                We have providfed this product in cooperation with:
+            </p>
+            <div class="product-id-wrpper">
+                <p id="company-name">MEGATECH ltd.</p>
+                <p id="company-phone">Call center: <span>0800/400800<span></p>
+                <p id="company-website">Web site <span>www.megatechltd.com</span></p>
+            </div>
+            <p class="buy-product-about dark-blue-text">
+                In order to make a purchase in a partner retail 
+                stores or online store, please generate the corresponding code by
+                choosing one of the options below.
+            </p>
+            <div class="qr-bar-promo-code-wrapper">
+                <button class="continue-button">QR code</button>
+                <button class="continue-button">Barcode</button>
+                <button class="continue-button">Promo code</button>
+            </div>
+            <!-- changing card section -->
+            <button class="btn-back">Back</button>
+        </div>        
+    </div>
+    <!-- buy product page -->
+    <!-- PLP 1 page -->
+    <div id="plp-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Discounts</h1>
+        <div class="main-plp-wrapper">
+            <div class="benefit-card">
+               <img src="https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg"/>
+               <p class="benefit-program dark-blue-text">Benefit program 1</p>
+               <i class="fa fa-arrow-circle-right dark-blue-text" aria-hidden="true"></i>
+            </div>
+            <div class="benefit-card">
+                <img src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg"/>
+                <p class="benefit-program dark-blue-text">Benefit program 2</p>
+                <i class="fa fa-arrow-circle-right dark-blue-text" aria-hidden="true"></i>
+            </div>
+            <div class="benefit-card">
+                <img src="https://static.scientificamerican.com/sciam/cache/file/9CAE9C60-8BC5-4CA3-95C180EFACDD99FD_source.jpg"/>
+                <p class="benefit-program dark-blue-text">Benefit program 3</p>
+                <i class="fa fa-arrow-circle-right dark-blue-text" aria-hidden="true"></i>
+            </div>
+        </div>    
+        <button class="btn-back">Back</button>    
+    </div>
+    <!-- PLP 1 page -->
+    <!-- PDP page -->
+    <div id="pdp-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Benefit program 1</h1>
+        <div class="main-pdp-wrapper">
+            <img class="main-pdp-img" src="https://static.scientificamerican.com/sciam/cache/file/9CAE9C60-8BC5-4CA3-95C180EFACDD99FD_source.jpg"/>
+            <p class="dark-blue-text">
+                The following products are available at 
+                discounted prices exclusively for registered
+                Users:
+            </p>
+            <div class="product-suggestions">
+                <img src="https://teeturtle-s3-web.s3.amazonaws.com/accounts/1/products/1986199880366/Avo-cat-o_800x800_SEPS-1000x1000.jpg"/>
+                <img src="https://teeturtle-s3-web.s3.amazonaws.com/accounts/1/products/1986199880366/Avo-cat-o_800x800_SEPS-1000x1000.jpg"/>
+                <img src="https://teeturtle-s3-web.s3.amazonaws.com/accounts/1/products/1986199880366/Avo-cat-o_800x800_SEPS-1000x1000.jpg"/>
+                <img src="https://teeturtle-s3-web.s3.amazonaws.com/accounts/1/products/1986199880366/Avo-cat-o_800x800_SEPS-1000x1000.jpg"/>
+                <img src="https://teeturtle-s3-web.s3.amazonaws.com/accounts/1/products/1986199880366/Avo-cat-o_800x800_SEPS-1000x1000.jpg"/>
+                <img src="https://teeturtle-s3-web.s3.amazonaws.com/accounts/1/products/1986199880366/Avo-cat-o_800x800_SEPS-1000x1000.jpg"/>
+            </div>
+        </div> 
+        <button class="btn-back">Back</button>       
+    </div>
+    <!-- PDP page -->
+    <!-- catalogs page -->
+    <div id="catalogs-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Catalogs</h1>
+        <div class="main-catalog-wrapper">
+            <p class="dark-blue-text">
+                Click to download the Catalog
+            </p>
+            <div class="catalog-suggestions">
+                <a href="#">
+                    <img src="https://cats.com/wp-content/uploads/2021/08/Screen-Shot-2022-04-02-at-12-.jpg"/>
+                </a>
+                <a href="#">
+                    <img src="https://cats.com/wp-content/uploads/2021/08/Screen-Shot-2022-04-02-at-12-.jpg"/>
+                </a>
+                <a href="#">
+                    <img src="https://cats.com/wp-content/uploads/2021/08/Screen-Shot-2022-04-02-at-12-.jpg"/>
+                </a>
+                <a href="#">
+                    <img src="https://cats.com/wp-content/uploads/2021/08/Screen-Shot-2022-04-02-at-12-.jpg"/>
+                </a>
+            </div>
+        </div> 
+        <button class="btn-back">Back</button>       
+    </div>
+    <!-- catalogs page -->
+    <!-- survey PLP page -->
+    <div id="survey-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">My surveys</h1>
+        <div class="main-plp-wrapper">
+            <div class="benefit-card">
+               <img src="https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg"/>
+               <div>
+                    <p class="benefit-program dark-blue-text">Survey 1</p>
+                    <p class="dark-blue-text">Loyality program</p>
+               </div>
+               <i class="fa fa-arrow-circle-right dark-blue-text" aria-hidden="true"></i>
+            </div>
+            <div class="benefit-card">
+                <img src="https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg"/>
+                <div>
+                    <p class="benefit-program dark-blue-text">Survey 2</p>
+                    <p class="dark-blue-text">Customer satisfaction</p>
+                </div>
+                
+                <i class="fa fa-arrow-circle-right dark-blue-text" aria-hidden="true"></i>
+            </div>
+            <div class="benefit-card">
+                <img src="https://static.scientificamerican.com/sciam/cache/file/9CAE9C60-8BC5-4CA3-95C180EFACDD99FD_source.jpg"/>
+                <div>
+                    <p class="benefit-program dark-blue-text">Survey 3</p>
+                    <p class="dark-blue-text">Quality of services</p>
+                </div>
+                <i class="fa fa-arrow-circle-right dark-blue-text" aria-hidden="true"></i>
+            </div>
+        </div>    
+        <button class="btn-back">Back</button>    
+    </div>
+    <!-- survey PLP page -->
+    <!-- survey PDP page -->
+    <div id="survey-pdp-page" class="main-wrapper">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Survey 1</h1>
+        <div class="main-survey-wrapper">
+            <img class="survey-logo" src="https://static.demilked.com/wp-content/uploads/2016/08/biggest-maine-coon-cat-photography-robert-sijka-12.jpg"/>
+            <p class="dark-blue-text">Please choose at least one of the following questions:</p>
+            <p class="dark-blue-text">Which of the listed products woukd you like to be included in the next motivational program?</p>
+            <div class="checkbox-wrpper">
+                <label class="dark-blue-text">
+                    <input type="checkbox"/>
+                    Cell phone
+                </label>
+                <label class="dark-blue-text">
+                    <input type="checkbox"/>
+                    Notebook
+                </label>
+                <label class="dark-blue-text">
+                    <input type="checkbox"/>
+                    Air-conditioner
+                </label>
+                <label class="dark-blue-text">
+                    <input type="checkbox"/>
+                    Tv
+                </label class="dark-blue-text">
+                <label class="dark-blue-text">
+                    <input type="checkbox"/>
+                    Other
+                </label>
+            </div>
+            <button class="continue-button">Send answer</button>
+        </div>    
+        <button class="btn-back">Back</button>    
+    </div>
+    <!-- survey PDP page -->
     <script>
 
         document.getElementById('dugme').addEventListener('click', function() {
