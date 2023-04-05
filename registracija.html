@@ -37,10 +37,10 @@
 </style> -->
 
 <body style="background-color:#ffffff;">
-    <div class="backdrop hidden">
+    <div class="backdrop hide">
         <img src="https://usagif.com/wp-content/uploads/loading-1.gif" class="loader"/>
     </div>
-    <div class="backdrop_sucess hidden">
+    <div class="backdrop_sucess hide">
         <p>Uspešna registracija</p>
         <a class="login" href="#">Idi na login stranu</a>
     </div>
@@ -183,10 +183,10 @@
                 console.log('PROSLA VALIDACIJA')
 
                 try{
-                    $('.backdrop').removeClass('hidden')
+                    $('.backdrop').removeClass('hide')
                     proveriMejl($('#email').val(), $('#password').val())
                 } catch (error) {
-                    $('.backdrop').addClass('hidden')
+                    $('.backdrop').addClass('hide')
                     alert('UPS, doslo je do greske!')
                 }
                 
