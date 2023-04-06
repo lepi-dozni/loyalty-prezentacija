@@ -211,7 +211,7 @@ function showUser(ID, email) {
         $('#barcode-number-holder').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
 
         // Dodavanje loyalty bodova na progress page
-        $('#progress-value').text(objekat.contact.fields.personal.loyalty_bodovi.value)
+        $('#progress-value').html(objekat.contact.fields.personal.loyalty_bodovi.value + '<span class="euro-sign">&#8364;</span>') 
         $('#progress-green').attr('value', objekat.contact.fields.personal.loyalty_bodovi.value)
         $('#progress-single').attr('value', objekat.contact.fields.personal.loyalty_bodovi.value)
 
@@ -219,24 +219,18 @@ function showUser(ID, email) {
         $('#cashback-page-barcode-holder').append('<svg id="barcode-cashback"></svg>')
         JsBarcode("#barcode-cashback", barcode)
         $('#cashback-page-barcode-number-holder').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
-        $('#cashback-num').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
+        $('#cashback-num').html(objekat.contact.fields.personal.loyalty_bodovi.value  + '<span class="euro-sign">&#8364;</span>')
 
         // Dodavanje loyalty bodova na buy product page
-        $('#product-price').text(objekat.contact.fields.personal.loyalty_bodovi.value)
+        $('#product-price').html(objekat.contact.fields.personal.loyalty_bodovi.value  + '<span class="euro-sign">&#8364;</span>') 
         $('.backdrop').addClass('hide')                
                         
     })
     .catch(error => console.log('error', error));
 
 }
-// main menu 
 $( document ).ready(function() {
-    // $('.close-menu').on('click', function(){
-    //     $('.main-nav').addClass('hidden-opacity').addClass('.nav-margin-left')
-    // })
-    // $('.menu-wrapper').on('click', function(){
-    //     $('.main-nav').removeClass('hidden-opacity').removeClass('.nav-margin-left')
-    // })
+    // main menu 
     $('.close-menu').on('click', function(){
         $('.main-nav').addClass('nav-margin-left')
         $('.close-menu').addClass('close-rotate')
@@ -245,7 +239,55 @@ $( document ).ready(function() {
         $('.main-nav').removeClass('nav-margin-left')
         $('.close-menu').removeClass('close-rotate')
     })
-    // close-menu close-rotate
+    // main menu 
+    // home links and backhome buttons
+    $('#barcode-page .btn-back, #progress-page .btn-back, #plp-page .btn-back, #survey-page .btn-back, #catalogs-page .btn-back').on('click', function(){
+        console.log('is clicked')
+        $(this).parents('.main-wrapper').addClass('hide')
+        $('#home-page').removeClass('hide')
+    })
+    $('.main-home-wrapper .home-link').on('click', function(e){
+        var pageLink = $(this).attr('data-page')
+        $(this).parents('#home-page').addClass('hide')
+        $('#' + pageLink).removeClass('hide')
+    })
+    // home links and backhome buttons
+    // progress page 
+    $('#cashback-page .btn-back, #buy-product-page .btn-back').on('click', function(){
+        console.log('is clicked')
+        $(this).parents('.main-wrapper').addClass('hide')
+        $('#progress-page').removeClass('hide')
+    })
+    $('#progress-page .continue-button').on('click', function(e){
+        var pageLink = $(this).attr('data-page')
+        $(this).parents('#progress-page').addClass('hide')
+        $('#' + pageLink).removeClass('hide')
+    })
+    // progress page 
+    // survey page 
+    $('#survey-pdp-page .btn-back').on('click', function(){
+        console.log('is clicked')
+        $(this).parents('.main-wrapper').addClass('hide')
+        $('#survey-page').removeClass('hide')
+    })
+    $('#survey-page .benefit-card').on('click', function(e){
+        var pageLink = $(this).attr('data-page')
+        console.log(pageLink)
+        $(this).parents('.main-wrapper').addClass('hide')
+        $('#' + pageLink).removeClass('hide')
+    })
+    // survey page 
+    // benefit page 
+    $('#pdp-page .btn-back').on('click', function(){
+        console.log('is clicked')
+        $(this).parents('.main-wrapper').addClass('hide')
+        $('#plp-page').removeClass('hide')
+    })
+    $('#plp-page .benefit-card').on('click', function(e){
+        var pageLink = $(this).attr('data-page')
+        console.log(pageLink)
+        $(this).parents('.main-wrapper').addClass('hide')
+        $('#' + pageLink).removeClass('hide')
+    })
+    // benefit page 
 });
-
-// main menu 
