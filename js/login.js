@@ -211,7 +211,7 @@ function showUser(ID, email) {
         $('#barcode-number-holder').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
 
         // Dodavanje loyalty bodova na progress page
-        $('#progress-value').text(objekat.contact.fields.personal.loyalty_bodovi.value)
+        $('#progress-value').html(objekat.contact.fields.personal.loyalty_bodovi.value + '<span class="euro-sign">&#8364;</span>') 
         $('#progress-green').attr('value', objekat.contact.fields.personal.loyalty_bodovi.value)
         $('#progress-single').attr('value', objekat.contact.fields.personal.loyalty_bodovi.value)
 
@@ -219,17 +219,16 @@ function showUser(ID, email) {
         $('#cashback-page-barcode-holder').append('<svg id="barcode-cashback"></svg>')
         JsBarcode("#barcode-cashback", barcode)
         $('#cashback-page-barcode-number-holder').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
-        $('#cashback-num').text(objekat.contact.fields.personal.loyalty_user_barcode.value)
+        $('#cashback-num').html(objekat.contact.fields.personal.loyalty_bodovi.value  + '<span class="euro-sign">&#8364;</span>')
 
         // Dodavanje loyalty bodova na buy product page
-        $('#product-price').text(objekat.contact.fields.personal.loyalty_bodovi.value)
+        $('#product-price').html(objekat.contact.fields.personal.loyalty_bodovi.value  + '<span class="euro-sign">&#8364;</span>') 
         $('.backdrop').addClass('hide')                
                         
     })
     .catch(error => console.log('error', error));
 
 }
-
 $( document ).ready(function() {
     // main menu 
     $('.close-menu').on('click', function(){
