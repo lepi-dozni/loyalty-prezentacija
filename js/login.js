@@ -242,7 +242,6 @@ $( document ).ready(function() {
     // main menu 
     // home links and backhome buttons
     $('#barcode-page .btn-back, #progress-page .btn-back, #plp-page .btn-back, #survey-page .btn-back, #catalogs-page .btn-back').on('click', function(){
-        console.log('is clicked')
         $(this).parents('.main-wrapper').addClass('hide')
         $('#home-page').removeClass('hide')
     })
@@ -252,42 +251,37 @@ $( document ).ready(function() {
         $('#' + pageLink).removeClass('hide')
     })
     // home links and backhome buttons
-    // progress page 
-    $('#cashback-page .btn-back, #buy-product-page .btn-back').on('click', function(){
-        console.log('is clicked')
-        $(this).parents('.main-wrapper').addClass('hide')
-        $('#progress-page').removeClass('hide')
-    })
-    $('#progress-page .continue-button').on('click', function(e){
-        var pageLink = $(this).attr('data-page')
-        $(this).parents('#progress-page').addClass('hide')
-        $('#' + pageLink).removeClass('hide')
-    })
-    // progress page 
-    // survey page 
-    $('#survey-pdp-page .btn-back').on('click', function(){
-        console.log('is clicked')
-        $(this).parents('.main-wrapper').addClass('hide')
-        $('#survey-page').removeClass('hide')
-    })
-    $('#survey-page .benefit-card').on('click', function(e){
-        var pageLink = $(this).attr('data-page')
-        console.log(pageLink)
-        $(this).parents('.main-wrapper').addClass('hide')
-        $('#' + pageLink).removeClass('hide')
-    })
-    // survey page 
-    // benefit page 
+    // benefit and survey 
+    
     $('#pdp-page .btn-back').on('click', function(){
-        console.log('is clicked')
         $(this).parents('.main-wrapper').addClass('hide')
         $('#plp-page').removeClass('hide')
     })
     $('#plp-page .benefit-card').on('click', function(e){
         var pageLink = $(this).attr('data-page')
-        console.log(pageLink)
+        $(this).parents('#plp-page').addClass('hide')
+        $('#' + pageLink).removeClass('hide')
+    })
+    $('#survey-pdp-page .btn-back').on('click', function(){
+        $(this).parents('.main-wrapper').addClass('hide')
+        $('#survey-page').removeClass('hide')
+    })
+    $('#survey-page .benefit-card').on('click', function(e){
+        var pageLink = $(this).attr('data-page')
+        $(this).parents('#survey-page').addClass('hide')
+        $('#' + pageLink).removeClass('hide')
+    })
+    // benefit and survey 
+    // use cashback - buy product 
+    $('#cashback-page .btn-back, #buy-product-page .btn-back').on('click', function(){
+        $(this).parents('.main-wrapper').addClass('hide')
+        $('#progress-page').removeClass('hide')
+    })
+    $('#progress-page .continue-button').on('click', function(e){
+        var pageLink = $(this).attr('data-page')
         $(this).parents('.main-wrapper').addClass('hide')
         $('#' + pageLink).removeClass('hide')
     })
-    // benefit page 
+    // use cashback - buy product 
 });
+
