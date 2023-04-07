@@ -283,5 +283,17 @@ $( document ).ready(function() {
         $('#' + pageLink).removeClass('hide')
     })
     // use cashback - buy product 
+
+
+
+    $('#menu-dugme').on('click', function() {
+        $('.close-menu').click()
+        $('[data-page="barcode-page"]').click()
+    })
+
+    $('.nav-list a:first').on('click', function() {
+        $('.close-menu').click()
+        $('[data-page="barcode-page"]').click()
+    })
 });
 
