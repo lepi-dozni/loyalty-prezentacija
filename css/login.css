@@ -424,3 +424,18 @@ p.benefit-program + p{
     margin-top: 50px;
 }
 /* survey pdp page */
+
+#login-page:not(.hide) + .menu-wrapper {
+    display: none;
+}
+
+#about-us-page,
+#campaign-terms-page,
+#our-network-page,
+#mail-box-page,
+#contact-us-page {
+    display: block;
+    width: 75%;
+    text-align: justify;
+    line-height: 20px;
+}

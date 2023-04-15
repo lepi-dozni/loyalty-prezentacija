@@ -135,9 +135,11 @@ body{
     font-weight: bold;
     border: 1px solid rgb(233, 233, 233);
     position: relative;
-    bottom: 20px;
+    /* bottom: 20px; */
 
-    position: absolute;
+    /* position: absolute; */
+    position: relative;
+    bottom: 0;
     width: 240px !important;
     left: 0; 
     right: 0; 
