@@ -48,6 +48,8 @@ body > a{
 }
 .wrapper.pol input{
     margin-right: 10px;
+    height: 15px;
+    width: 15px;
 }
 .wrapper.rodjendan select{
     border-top: none;

@@ -223,12 +223,57 @@ function showUser(ID, email) {
 
         // Dodavanje loyalty bodova na buy product page
         $('#product-price').html(objekat.contact.fields.personal.loyalty_bodovi.value  + '<span class="euro-sign">&#8364;</span>') 
-        $('.backdrop').addClass('hide')                
+        $('.backdrop').addClass('hide')    
+        
+        // Upisivanje login podataka u cookie da bi user ostao ulogovan
+        var loyalty_id = 'loyalty_id=' + user_id
+        document.cookie = loyalty_id
+
+        var loyalty_barcode = 'loyalty_barcode=' + objekat.contact.fields.personal.loyalty_user_barcode.value
+        document.cookie = loyalty_barcode
+
+        var loyalty_bodovi = 'loyalty_points=' + objekat.contact.fields.personal.loyalty_bodovi.value
+        document.cookie = loyalty_bodovi
                         
     })
     .catch(error => console.log('error', error));
 
 }
+
+
+function ulogovanKorisnik() {
+    $('#barcode').remove()
+
+    $('#barcode-holder').append('<svg id="barcode"></svg>')
+
+    var cookie = document.cookie
+    var barcode = cookie.split('loyalty_barcode=')[1]
+    barcode = barcode.split(';')[0]
+    console.log(barcode)
+    var points = cookie.split('loyalty_points=')[1]
+    points = points.split(';')[0]
+        
+    // Dodavanje generisanog barkoda i numerickog barkoda na barcode page
+    JsBarcode("#barcode", barcode);
+    $('#barcode-number-holder').text(barcode)
+
+    // Dodavanje loyalty bodova na progress page
+    $('#progress-value').html(points + '<span class="euro-sign">&#8364;</span>') 
+    $('#progress-green').attr('value', points)
+    $('#progress-single').attr('value', points)
+
+    // Dodavanje generisanog barkoda i numerickog barkoda na cashback page
+    $('#cashback-page-barcode-holder').append('<svg id="barcode-cashback"></svg>')
+    JsBarcode("#barcode-cashback", barcode)
+    $('#cashback-page-barcode-number-holder').text(barcode)
+    $('#cashback-num').html(points  + '<span class="euro-sign">&#8364;</span>')
+
+    // Dodavanje loyalty bodova na buy product page
+    $('#product-price').html(points  + '<span class="euro-sign">&#8364;</span>') 
+    $('.backdrop').addClass('hide') 
+}
+
+
 $( document ).ready(function() {
     // main menu 
     $('.close-menu').on('click', function(){
@@ -291,9 +336,39 @@ $( document ).ready(function() {
         $('[data-page="barcode-page"]').click()
     })
 
-    $('.nav-list a:first').on('click', function() {
+    $('.nav-list a:not(#logout)').on('click', function() {
         $('.close-menu').click()
-        $('[data-page="barcode-page"]').click()
+        var pageLink = $(this).attr('data-page')
+        $('div.main-wrapper').addClass('hide')
+        $('#' + pageLink).removeClass('hide')
+        // $('[data-page="barcode-page"]').click()
     })
+
+    
+    $('.main-nav img.main.logo').on('click', function() {
+        $('.close-menu').click()
+    })
+
+    // Back dugmici na template stranicama iz sabmenija
+    $('button.first-level').on('click', function() {
+        $('div.main-wrapper').addClass('hide')
+        $('#home-page').removeClass('hide')
+    })
+
+    // globalni event za klik na logo za vracanje na homepage
+    $('.main-wrapper:not(#login-page) img.main.logo').on('click', function() {
+        $('div.main-wrapper').addClass('hide')
+        $('#home-page').removeClass('hide')
+    })
+
+    $('#logout').on('click', function() {
+        document.cookie = ''
+        $('.close-menu').click()
+        $('div.main-wrapper').addClass('hide')
+        $('#login-page').removeClass('hide')
+    })
+
+
+
 });
 

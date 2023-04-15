@@ -22,9 +22,7 @@
     <div class="backdrop hide">
         <img src="https://usagif.com/wp-content/uploads/loading-1.gif" class="loader"/>
     </div>
-    <div class="menu-wrapper">
-        <i class="fa fa-solid fa-bars"></i>
-    </div>
+
     <nav class="main-nav nav-margin-left">
         <div class="logo_wrapper">
             <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
@@ -33,13 +31,14 @@
             <i class="fa fa-times" aria-hidden="true"></i>
         </button>
         <ul class="nav-list">
-            <li><a class="dark-blue-text" href="#"><i class="fa fa-home" aria-hidden="true"></i><p>Home</p></a></li>
-            <li><a class="dark-blue-text" href="#"><i class="fa fa-building" aria-hidden="true"></i><p>About us</p></a></li>
-            <li><a class="dark-blue-text" href="#"><i class="fa fa-building-o" aria-hidden="true"></i><p>Campaign terms</p></a></li>
-            <li><a class="dark-blue-text" href="#"><i class="fa fa-globe" aria-hidden="true"></i><p>Our network</p></a></li>
-            <li><a class="dark-blue-text" href="#"><i class="fa fa-envelope" aria-hidden="true"></i><p>Mail box</p></a></li>
-            <li><a class="dark-blue-text" href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i><p>Contact us</p></a></li>
-            <li><a class="dark-blue-text" href="#"><i class="fa fa-user" aria-hidden="true"></i><p>My profile</p></a></li>
+            <li><a class="dark-blue-text" data-page="home-page" href="javascript:void(0)"><i class="fa fa-home" aria-hidden="true"></i><p>Home</p></a></li>
+            <li><a class="dark-blue-text" data-page="about-us-page" href="javascript:void(0)"><i class="fa fa-building" aria-hidden="true"></i><p>About us</p></a></li>
+            <li><a class="dark-blue-text" data-page="campaign-terms-page" href="javascript:void(0)"><i class="fa fa-building-o" aria-hidden="true"></i><p>Campaign terms</p></a></li>
+            <li><a class="dark-blue-text" data-page="our-network-page" href="javascript:void(0)"><i class="fa fa-globe" aria-hidden="true"></i><p>Our network</p></a></li>
+            <li><a class="dark-blue-text" data-page="mail-box-page" href="javascript:void(0)"><i class="fa fa-envelope" aria-hidden="true"></i><p>Mail box</p></a></li>
+            <li><a class="dark-blue-text" data-page="contact-us-page" href="javascript:void(0)"><i class="fa fa-volume-control-phone" aria-hidden="true"></i><p>Contact us</p></a></li>
+            <li><a class="dark-blue-text" data-page="barcode-page" href="javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i><p>My profile</p></a></li>
+            <li><a id="logout" class="dark-blue-text" ><i class="fa fa-user" aria-hidden="true"></i><p>Log out</p></a></li>
         </ul>
         <button id="menu-dugme" class="continue-button">ADD NEW POINTS</button>
     </nav>
@@ -66,6 +65,9 @@
           </div>
           <br>
         <button id="dugme">LOGIN</button>            
+    </div>
+    <div class="menu-wrapper">
+        <i class="fa fa-solid fa-bars"></i>
     </div>
     <!-- account page -->
     <!-- <div id="account-page" class="hide main-wrapper hide">
@@ -402,28 +404,156 @@
         </div>    
         <button class="btn-back">Back</button>    
     </div>
+    
+    <!-- About us page -->
+    <div id="about-us-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">About us</h1>
+        <br>
+        <div>
+            <p class="dark-blue-text">We are a team of passionate individuals who are dedicated to providing the best products and services to our customers. Our goal is to create a seamless experience for our customers, from the moment they first interact with us to the moment they receive their order.</p>
+            <br>
+            <p class="dark-blue-text">At our core, we believe that our success comes from putting our customers first. We strive to understand their needs and exceed their expectations at every turn. This is why we have assembled a team of experts who are knowledgeable about our products and committed to providing exceptional customer service.</p>
+            <br>
+            <p class="dark-blue-text">Thank you for taking the time to learn more about us. We look forward to serving you and exceeding your expectations in every way possible.</p>
+        </div>
+        <button class="btn-back first-level">Back</button>
+
+    </div>
+
+    <!-- Campaign terms page -->
+    <div id="campaign-terms-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Campaign terms</h1>
+        <br>
+        <div>
+            <p class="dark-blue-text">Welcome to our Campaign Terms page. Here you will find all the information you need to understand the terms and conditions of our campaigns. We want to ensure that our campaigns are fair and transparent for all participants, and we believe that this page will help to achieve that goal.</p>
+            <br>
+            <p class="dark-blue-text">By participating in our campaigns, you agree to abide by these terms and conditions. Please read them carefully before entering any of our campaigns.</p>
+            <br>
+            <p class="dark-blue-text">Our campaigns are open to all individuals who meet the eligibility criteria specified for each campaign. These criteria may include age, residency, and other requirements. Employees of our company and their immediate family members are not eligible to participate in our campaigns.</p>
+            <br>
+            <p class="dark-blue-text">The winner of each campaign will be selected based on the criteria specified in the campaign rules. The winner will be notified by email or phone within a specified timeframe.</p>
+            <br>
+            <p class="dark-blue-text">By entering our campaigns, you agree to allow us to use your name, likeness, and entry in our marketing materials and on our website.</p>
+        </div>
+        <button class="btn-back first-level">Back</button>
+
+    </div>
+
+    <!-- Our network page -->
+    <div id="our-network-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Our network</h1>
+        <br>
+        <div>
+            <p class="dark-blue-text">Welcome to Our Network page. Here you will learn about the network of partners and collaborators who help us to provide the best products and services to our customers.</p>
+            <br>
+            <p class="dark-blue-text">Our network is made up of a diverse group of individuals and organizations, all of whom share our commitment to excellence and customer satisfaction. We work with a wide range of partners, including suppliers, manufacturers, distributors, and service providers, to ensure that we are able to meet the needs of our customers in the most efficient and effective way possible.</p>
+            <br>
+            <p class="dark-blue-text">Our network is built on strong relationships and open communication. We believe that by working closely with our partners and collaborators, we are able to achieve our goals more effectively and efficiently. We are constantly seeking new partnerships and collaborations that will help us to expand our network and enhance our ability to serve our customers.</p>
+            <br>
+            <p class="dark-blue-text">Our partners and collaborators are chosen based on their expertise, reliability, and commitment to quality. We work only with those who share our values and who are dedicated to providing the highest level of service possible. We believe that by working together, we can achieve great things and make a positive impact on the world.</p>
+            <br>
+            <p class="dark-blue-text">We are proud of our network and the contributions that each of our partners and collaborators make to our success. Without them, we would not be able to provide the level of service and quality that our customers have come to expect. We are committed to maintaining strong relationships with all of our partners and collaborators, and we look forward to continued growth and success together.</p>
+        </div>
+        <button class="btn-back first-level">Back</button>
+
+    </div>
+
+    <!-- Mailbox page -->
+    <div id="mail-box-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Mail box</h1>
+        <br>
+        <div>
+            <p class="dark-blue-text">Promo message</p>
+            <br>
+            <p class="dark-blue-text">Promo message</p>
+            <br>
+            <p class="dark-blue-text">Promo message</p>
+        </div>
+        <button class="btn-back first-level">Back</button>
+
+    </div>
+
+    <!-- Contact us page -->
+    <div id="contact-us-page" class="main-wrapper hide">
+        <div class="logo_wrapper">
+            <img class="main logo" src="https://dev4.in.rs/favicon_64x64.png"/>
+        </div>
+        <h1 class="dark-blue-text">Contact us</h1>
+        <br>
+        <div>
+            <p class="dark-blue-text">To contact us, simply fill out the contact form on this page with your name, email address, and message. We will do our best to respond to your inquiry within 24-48 hours.</p>
+            <br>
+            <p class="dark-blue-text">Alternatively, you can reach us via phone or email. Our contact information is listed below:</p>
+            <br>
+            <p class="dark-blue-text">Phone: +3812345678</p>
+            <br>
+            <p class="dark-blue-text">Email: customerservice@company.com</p>
+            <br>
+            <p class="dark-blue-text">Working hours:</p>
+            <br>
+            <p class="dark-blue-text">Monday through Friday from 9:00 am to 5:00 pm</p>
+            <br>
+            <p class="dark-blue-text">Location:</p>
+            <br>
+            <p class="dark-blue-text">21 Mulholland Drive, Santa Monica</p>
+        </div>
+        <button class="btn-back first-level">Back</button>
+
+    </div>
+
     <!-- survey PDP page -->
     <script>
 
-        document.getElementById('dugme').addEventListener('click', function() {
-            checkEmail('#email')
+        $( document ).ready(function() {
+            // vec ulogovan korisnik
+            if(document.cookie.indexOf('loyalty') > -1) {
 
-            if(checkEmail('#email')) {
-                console.log('prosao unos mejla')
+                
+                $('#home-page').removeClass('hide')
+                $('#login-page').addClass('hide')
 
-                if($('#password').val().length > 0) {
-                    $('#prazna_lozinka').addClass('hide')
-                    checkUserEmail($('#email').val())
-                    $('.backdrop').removeClass('hide')
+                ulogovanKorisnik()
 
-                } else {
-                    $('#prazna_lozinka').removeClass('hide')
-                }
 
             } else {
-                console.log('nije prosao unos mejla')
+                // nije ulogovan korisnik
+
             }
         })
+
+        document.getElementById('dugme').addEventListener('click', function() {
+                    checkEmail('#email')
+
+                    if(checkEmail('#email')) {
+                        console.log('prosao unos mejla')
+
+                        if($('#password').val().length > 0) {
+                            $('#prazna_lozinka').addClass('hide')
+                            checkUserEmail($('#email').val())
+                            $('.backdrop').removeClass('hide')
+
+                        } else {
+                            $('#prazna_lozinka').removeClass('hide')
+                        }
+
+                    } else {
+                        console.log('nije prosao unos mejla')
+                    }
+        })
+
+        
     </script>
 </body>
 </html>
