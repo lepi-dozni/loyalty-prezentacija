@@ -429,6 +429,11 @@ p.benefit-program + p{
     display: none;
 }
 
+#buy-product-page,
+#catalogs-page {
+    display: block;
+}
+
 #about-us-page,
 #campaign-terms-page,
 #our-network-page,
@@ -438,4 +443,20 @@ p.benefit-program + p{
     width: 75%;
     text-align: justify;
     line-height: 20px;
+}
+
+.phone {
+    background-image: url('https://development.sales-snap.com/asset/140:iphonepng');
+}
+
+.washing-machine {
+    background-image: url('https://development.sales-snap.com/asset/142:washing-machine-removebg-previewpng');
+}
+
+.fridge {
+    background-image: url('https://development.sales-snap.com/asset/143:stainless-look-magic-chef-mini-fridges-hmdr450se-641000-removebg-previewpng');
+}
+
+.tv {
+    background-image: url('https://development.sales-snap.com/asset/144:71d5fmdvq9lsl1500-removebg-previewpng');
 }
