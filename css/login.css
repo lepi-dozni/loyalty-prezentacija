@@ -460,3 +460,21 @@ p.benefit-program + p{
 .tv {
     background-image: url('https://development.sales-snap.com/asset/144:71d5fmdvq9lsl1500-removebg-previewpng');
 }
+
+@media only screen and (max-width: 400px) {
+    #home-page {
+        display: block;
+    }
+
+    .menu-wrapper {
+        z-index: 111111;
+    }
+
+    .main-nav.nav-margin-left {
+        display: none;
+    }
+
+    .main-nav:not(.nav-margin-left) {
+        display: block;
+    }
+}
