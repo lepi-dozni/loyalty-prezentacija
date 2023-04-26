@@ -461,6 +461,10 @@ p.benefit-program + p{
     background-image: url('https://development.sales-snap.com/asset/144:71d5fmdvq9lsl1500-removebg-previewpng');
 }
 
+.menu-wrapper {
+    z-index: 111111;
+}
+
 @media only screen and (max-width: 400px) {
     #home-page {
         display: block;

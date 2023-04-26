@@ -228,12 +228,15 @@ function showUser(ID, email) {
         // Upisivanje login podataka u cookie da bi user ostao ulogovan
         var loyalty_id = 'loyalty_id=' + user_id
         document.cookie = loyalty_id
+        localStorage.setItem('loyalty_id', user_id)
 
         var loyalty_barcode = 'loyalty_barcode=' + objekat.contact.fields.personal.loyalty_user_barcode.value
         document.cookie = loyalty_barcode
+        localStorage.setItem('loyalty_barcode', objekat.contact.fields.personal.loyalty_user_barcode.value)
 
         var loyalty_bodovi = 'loyalty_points=' + objekat.contact.fields.personal.loyalty_bodovi.value
         document.cookie = loyalty_bodovi
+        localStorage.setItem('loyalty_bodovi', objekat.contact.fields.personal.loyalty_bodovi.value)
                         
     })
     .catch(error => console.log('error', error));
@@ -246,12 +249,18 @@ function ulogovanKorisnik() {
 
     $('#barcode-holder').append('<svg id="barcode"></svg>')
 
-    var cookie = document.cookie
-    var barcode = cookie.split('loyalty_barcode=')[1]
-    barcode = barcode.split(';')[0]
+    // var cookie = document.cookie
+    // var barcode = cookie.split('loyalty_barcode=')[1]
+    // barcode = barcode.split(';')[0]
+    // console.log(barcode)
+    // var points = cookie.split('loyalty_points=')[1]
+    // points = points.split(';')[0]
+
+
+    barcode = localStorage.getItem('loyalty_barcode')
     console.log(barcode)
-    var points = cookie.split('loyalty_points=')[1]
-    points = points.split(';')[0]
+    points = localStorage.getItem('loyalty_bodovi')
+    console.log(points)
         
     // Dodavanje generisanog barkoda i numerickog barkoda na barcode page
     JsBarcode("#barcode", barcode);
