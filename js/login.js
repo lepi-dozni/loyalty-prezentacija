@@ -372,6 +372,7 @@ $( document ).ready(function() {
 
     $('#logout').on('click', function() {
         document.cookie = ''
+        localStorage.clear()
         $('.close-menu').click()
         $('div.main-wrapper').addClass('hide')
         $('#login-page').removeClass('hide')
