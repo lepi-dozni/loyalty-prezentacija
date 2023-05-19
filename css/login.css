@@ -596,7 +596,7 @@ body:has(#login-page:not(.hide)) .menu-wrapper {
 #mail-box-page,
 #contact-us-page {
     display: block;
-    width: 75%;
+    width: 65%;
     text-align: justify;
     line-height: 20px;
 }

@@ -247,11 +247,11 @@ body {
     /* -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
     box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75); */
-    margin-top: 40px;
+    margin-top: 0px;
     font-weight: bold;
     /* border: 1px solid rgb(233, 233, 233); */
-    position: relative;
-    bottom: 50px;
+    position: relative !important;
+    bottom: -30px;
     position: absolute;
     width: 240px !important;
     left: 0;
