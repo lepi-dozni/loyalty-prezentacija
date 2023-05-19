@@ -635,3 +635,8 @@ body:has(#login-page:not(.hide)) .menu-wrapper {
         display: block;
     }
 }
+
+#pdp-page .btn-back {
+    position: sticky !important;
+    bottom: 15px !important; 
+}
