@@ -1,4 +1,6 @@
 /* pages main */
+
+
 /* #login-page .wrapper,
 #account-page .wrapper,
 #login-page h1,
@@ -7,67 +9,129 @@
 #home-page h1{
     margin-bottom: 40px;
 } */
-.main-wrapper .wrapper{
+
+.main-wrapper .wrapper {
     margin-top: 10px;
     margin-bottom: 40px;
 }
-.main-wrapper h1{
+
+.main-wrapper h1 {
     text-align: center;
     font-weight: bold;
 }
+
+
 /* #login-page h1,
 #home-page h1,
 #account-page h1{
     text-align: center;
 } */
+
+
 /* pages main */
+
+
 /* home page */
-.wrapper.home-link{
-    width: 140px;
-    height: 140px;
-    border: 2px solid #000;
+
+#home-page {
+    position: relative;
+}
+
+.wrapper.home-link {
+    width: 80px;
+    height: 80px;
+    /* border: 2px solid #000; */
     border-radius: 20px;
-    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
-    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px !important;
+    margin: 10px !important;
 }
-.wrapper.home-link i{
+
+.wrapper.home-link img {
+    width: 100%;
+    height: auto;
+}
+
+.wrapper.home-link i {
     margin-top: 10px;
 }
-.main-home-wrapper{
+
+.main-home-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin-top: 40px;
 }
+
+
 /* home page */
+
+
+/* slick slider */
+
+.sales-snap-slick,
+.slick-slide,
+.slick-list {
+    height: 160px;
+    width: 300px;
+}
+
+.sales-snap-slick img {
+    height: 160px;
+    width: 300px;
+}
+
+.sales-snap-slick .slick-list {
+    border-radius: 20px;
+}
+
+.sales-snap-slick .slick-dots li button:before {
+    font-size: 30px;
+    color: #383950;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #383950;
+}
+
+
+/* slick slider */
+
+
 /* barcode page - cashback page */
+
 #barcode-page p,
 #cashback-page p,
 #buy-product-page p,
 #plp-page p:not(.benefit-program),
-#survey-page p:not(.benefit-program){
+#survey-page p:not(.benefit-program) {
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
 }
+
 #barcode-holder,
-#cashback-page-barcode-holder{
+#cashback-page-barcode-holder {
     width: 200px;
     height: 150px;
     margin-top: 20px !important;
     margin: auto;
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
 }
+
 #barcode-number-holder,
-#cashback-page-barcode-number-holder{
+#cashback-page-barcode-number-holder {
     width: 200px;
     height: 50px;
     margin-top: 20px !important;
@@ -75,63 +139,81 @@
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-
 }
+
 #cashback-num,
-#product-price{
+#product-price {
     font-size: 40px;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
 }
+
+#barcode-page {
+    position: relative;
+}
+
+
 /* barcode page - cashback page */
+
+
 /* buy product page */
+
 .product-id-wrpper,
-.product-id-wrpper{
+.product-id-wrpper {
     width: 80%;
     margin-top: 20px !important;
     height: auto;
     margin: auto;
     border: 1px solid rgb(194, 194, 194);
-    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
-    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
     text-align: center;
     border-radius: 10px;
 }
-#product-category{
+
+#product-category {
     color: #000 !important;
     font-weight: unset !important;
     margin-top: 10px !important;
 }
+
 #product-name,
-#product-model{
+#product-model {
     margin-top: 5px !important;
     font-size: 20px;
 }
-#company-name{
+
+#company-name {
     margin-top: 10px !important;
 }
-#product-model{
+
+#product-model {
     margin-bottom: 10px;
 }
+
 .buy-product-about,
 #company-phone,
-#company-website{
+#company-website {
     font-weight: unset !important;
 }
+
 #company-phone,
-#company-website{
+#company-website {
     margin-top: 5px !important;
 }
+
 #company-phone span,
-#company-website span{
+#company-website span {
     font-weight: bold;
 }
-#company-website{
+
+#company-website {
     margin-bottom: 10px !important;
 }
-.qr-bar-code-wrapper{
+
+.qr-bar-code-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -139,7 +221,8 @@
     align-items: center;
     margin-top: 20px;
 }
-.qr-bar-promo-code-wrapper{
+
+.qr-bar-promo-code-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -147,33 +230,43 @@
     align-items: center;
     margin-top: 20px;
 }
+
 .qr-bar-code-wrapper button,
-.qr-bar-promo-code-wrapper button{
+.qr-bar-promo-code-wrapper button {
     padding: 10px 15px 10px 15px;
 }
-.promo-code-button{
+
+.promo-code-button {
     margin-top: 20px !important;
 }
+
+
 /* buy product page */
+
+
 /* progress page */
+
 #progress-page.main-wrapper,
 #buy-product-page.main-wrapper,
 #cashback-page.main-wrapper,
 #home-page.main-wrapper,
 #barcode-page.main-wrapper,
-#survey-page.main-wrapper{
+#survey-page.main-wrapper {
     flex-direction: column;
 }
-#progress-value{
+
+#progress-value {
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
     font-size: 40px;
 }
-.single-progress-bar-wrapper{
+
+.single-progress-bar-wrapper {
     margin-top: 20px;
 }
-#progress-bar-holder{
+
+#progress-bar-holder {
     width: 100%;
     height: 10px;
     border: 1px solid rgb(194, 194, 194);
@@ -183,7 +276,8 @@
     margin: auto;
     border-radius: 5px;
 }
-#single-progress-bar-holder{
+
+#single-progress-bar-holder {
     width: 100%;
     height: 10px;
     border: 1px solid rgb(194, 194, 194);
@@ -192,48 +286,59 @@
     margin: auto;
     border-radius: 5px;
 }
-#progress-page button{
+
+#progress-page button {
     margin-top: 20px;
 }
-.main-progress-wrapper{
+
+.main-progress-wrapper {
     width: 100%;
 }
+
 .upper-progress-product,
-.lower-progress-product{
+.lower-progress-product {
     width: 100%;
     height: 70px;
     /* border: 1px solid black; */
 }
-.upper-progress-product .item-holder{
+
+.upper-progress-product .item-holder {
     float: left;
     margin-left: 50px;
 }
-.lower-progress-product .item-holder{
+
+.lower-progress-product .item-holder {
     float: right;
     margin-right: 50px;
     margin-top: 16px;
 }
-.lower-progress-product .item-holder-indicator{
+
+.lower-progress-product .item-holder-indicator {
     margin-top: -18px;
 }
-.upper-progress-product .item-holder-indicator{
+
+.upper-progress-product .item-holder-indicator {
     margin-top: 50px;
 }
-.item-holder{
+
+.item-holder {
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    border: 2px solid rgb(194, 194, 194); /* gray */
+    border: 2px solid rgb(194, 194, 194);
+    /* gray */
     background-size: cover;
     background-image: url('https://thumbs.dreamstime.com/b/groceries-paper-bag-vector-illustration-97077851.jpg');
 }
-.item-holder-indicator{
+
+.item-holder-indicator {
     width: 2px;
     height: 18px;
-    background-color:rgb(194, 194, 194);
+    background-color: rgb(194, 194, 194);
     display: block;
     margin: auto;
 }
+
 #progress-red {
     border: none;
     width: 100%;
@@ -255,6 +360,7 @@
 #progress-red::-webkit-progress-bar {
     background: transparent;
 }
+
 #progress-green,
 #progress-single {
     border: none;
@@ -276,33 +382,42 @@
 }
 
 #progress-green::-webkit-progress-value,
-#progress-single::-webkit-progress-value{
+#progress-single::-webkit-progress-value {
     background: rgb(9, 209, 92);
 }
 
 #progress-green::-webkit-progress-bar,
-#progress-single::-webkit-progress-bar{
+#progress-single::-webkit-progress-bar {
     background: rgb(182, 182, 182);
 }
+
+
 /* progress page */
+
+
 /* PLP */
-.benefit-card img{
+
+.benefit-card img {
     width: 60px;
     height: auto;
 }
-p.benefit-program{
+
+p.benefit-program {
     text-align: center;
     font-weight: bold;
 }
-p.benefit-program + p{
+
+p.benefit-program+p {
     text-align: center;
     font-weight: unset !important;
     margin-top: 5px !important;
 }
-.main-plp-wrapper{
+
+.main-plp-wrapper {
     width: 100%;
 }
-.benefit-card{
+
+.benefit-card {
     margin-top: 40px !important;
     padding: 20px 0px 20px 0px;
     display: flex;
@@ -312,22 +427,28 @@ p.benefit-program + p{
     align-items: center;
     margin-top: 20px;
     width: 100%;
-    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
-    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0, 0, 0, 0.75);
     border: 1px solid rgb(194, 194, 194);
 }
+
+
 /* #plp-page.main-wrapper,
 #survey-page.main-wrapper{
     justify-content: center;
 } */
 
+
 /* PLP */
+
+
 /* PDP*/
+
 .main-pdp-wrapper,
 .product-suggestions,
 .main-catalog-wrapper,
-.catalog-suggestions{
+.catalog-suggestions {
     height: auto;
     display: flex;
     flex-direction: row;
@@ -335,77 +456,101 @@ p.benefit-program + p{
     justify-content: space-around;
     align-items: center;
 }
-.main-pdp-img{
+
+.main-pdp-img {
     width: 80%;
     margin-top: 20px;
 }
+
 #pdp-page,
 #plp-page,
-#survey-pdp-page{
+#survey-pdp-page {
     flex-direction: column;
     height: auto;
 }
-#catalogs-page{
+
+#catalogs-page {
     flex-direction: column;
     height: 100%;
 }
-#pdp-page p{
+
+#pdp-page p {
     text-align: center;
     margin-top: 20px;
 }
-.product-suggestions img{
+
+.product-suggestions img {
     width: 39%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+
 /* PDP*/
+
+
 /* catalogs */
-.catalog-suggestions img{
+
+.catalog-suggestions img {
     width: 100%;
 }
-.catalog-suggestions a{
+
+.catalog-suggestions a {
     display: block;
     width: 39%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#catalogs-page p{
+
+#catalogs-page p {
     font-weight: bold;
 }
-#catalogs-page .main-catalog-wrapper{
+
+#catalogs-page .main-catalog-wrapper {
     margin-top: 40px;
 }
+
+
 /* catalogs */
+
+
 /* survey pdp page */
-#survey-pdp-page p{
+
+#survey-pdp-page p {
     text-align: center;
     margin-top: 40px;
 }
-.mauticform-checkboxgrp-row{
+
+.mauticform-checkboxgrp-row {
     margin-left: 80px;
     margin-top: 10px;
 }
+
 .mauticform-label,
 .mauticform-checkboxgrp-row label,
-#home-page h1{
+#home-page h1 {
     text-align: center;
     color: #286488;
 }
-.mauticform-button-wrapper .mauticform-button{
+
+.mauticform-button-wrapper .mauticform-button {
     display: block !important;
     margin: auto !important;
 }
-.main-survey-wrapper{
+
+.main-survey-wrapper {
     width: 100%;
     overflow: hidden;
 }
-.survey-logo{
+
+.survey-logo {
     width: 100px;
     margin: auto;
     margin-top: 20px;
     display: block;
 }
-.checkbox-wrpper{
+
+.checkbox-wrpper {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -416,16 +561,27 @@ p.benefit-program + p{
     margin-top: 40px;
     padding-left: 77px;
 }
-.checkbox-wrpper label{
+
+.checkbox-wrpper label {
     margin-top: 10px;
 }
-#survey-pdp-page .continue-button{
+
+#survey-pdp-page .continue-button {
     padding: 10px 15px 10px 15px;
     margin-top: 50px;
 }
+
+
 /* survey pdp page */
 
-#login-page:not(.hide) + .menu-wrapper {
+body:has(#login-page:not(.hide)) .menu-wrapper {
+    display: none;
+}
+
+
+/* NIKOLA IZMENE */
+
+#login-page:not(.hide)+.menu-wrapper {
     display: none;
 }
 
@@ -469,15 +625,12 @@ p.benefit-program + p{
     #home-page {
         display: block;
     }
-
     .menu-wrapper {
         z-index: 111111;
     }
-
     .main-nav.nav-margin-left {
         display: none;
     }
-
     .main-nav:not(.nav-margin-left) {
         display: block;
     }

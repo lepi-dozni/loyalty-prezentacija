@@ -48,8 +48,6 @@ body > a{
 }
 .wrapper.pol input{
     margin-right: 10px;
-    height: 15px;
-    width: 15px;
 }
 .wrapper.rodjendan select{
     border-top: none;
@@ -91,12 +89,13 @@ body > a{
 #dugme{
     margin: auto;
     display: block;
-    padding: 10px 9px 10px 9px;
-    border-radius: 7px;
+    padding: 10px 40px 10px 40px;
+    border-radius: 20px;
     border: none;
-    color: #fff;
-    background-color: #286488;
-    -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    color: #383950;
+    background-color: #F6A201;
+    font-weight: bold;
+    /* -webkit-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
-    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 6px 10px 17px -7px rgba(0,0,0,0.75); */
 }
