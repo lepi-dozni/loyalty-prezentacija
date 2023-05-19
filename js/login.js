@@ -379,5 +379,26 @@ $(document).ready(function() {
     })
 
 
+    $('.single-progress-bar-wrapper .item-holder').on('click', function(event) {
+        $('.main-progress-wrapper [data-page="buy-product-page"]').click()
+            if($(this).attr('class').indexOf('phone') > -1) {
+                $('#product-category').text('Mobile phone')
+                $('#product-name').text('iPhone 14')
+                $('#product-model').text('IPH104065')
+            } else if($(this).attr('class').indexOf('tv') > -1) {
+                $('#product-category').text('TV')
+                $('#product-name').text('Sony Bravia XR')
+                $('#product-model').text('SBR104066')
+            } else if($(this).attr('class').indexOf('fridge') > -1) {
+                $('#product-category').text('Refrigerator')
+                $('#product-name').text('LG Smart Freeze')
+                $('#product-model').text('RFR104067')
+            } else if($(this).attr('class').indexOf('washing-machine') > -1) {
+                $('#product-category').text('Washing machine')
+                $('#product-name').text('BEKO')
+                $('#product-model').text('WEY104064')
+            }
+    })
+
 
 });
